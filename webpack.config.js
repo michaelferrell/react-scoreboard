@@ -15,7 +15,7 @@ if (!process.env.NODE_ENV) {
 
 //example environment points at preloaded example
 //see: react-json-view/example/example.js
-const entrypoint = '/index.js';
+const entrypoint = PATHS.js + '/index.js';
 
 const config = {
   entry: [entrypoint],
@@ -67,17 +67,21 @@ const config = {
             loader: 'babel-loader'
           }
         ],
-        include: [PATHS.js, PATHS.example]
+        include: [PATHS.js]
       },
       {
-        test: /\.scss$/,
-        use: [{
-          loader: "style-loader"
-        }, {
-          loader: "css-loader"
-        }, {
-          loader: "sass-loader"
-        }]
+        test: /\.s?css$/,
+        use: [
+          {
+            loader: "style-loader"
+          },
+          {
+            loader: "css-loader"
+          },
+          {
+            loader: "sass-loader"
+          }
+        ]
       }
     ]
   }
