@@ -4,6 +4,7 @@
     margin-right: auto;
     margin-left: auto;
 }
+
 /* WRAPPER BREAKPOINTS
  * =================== */
 
@@ -36,7 +37,6 @@
     flex-wrap: wrap;
     white-space: no-wrap
 }
-
 
 /* MOBILE SIZING
  * ============= */
