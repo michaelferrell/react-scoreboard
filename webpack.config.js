@@ -1,13 +1,12 @@
 const path = require('path');
 const webpack = require('webpack');
-const wds_port = 3002;
+const wds_port = 3000;
 
 const PATHS = {
     src: path.join(__dirname, 'src'),
     js: path.join(__dirname, 'src/js'),
     style: path.join(__dirname, 'src/style'),
-    build: path.join(__dirname, 'dist'),
-    example: path.join(__dirname, 'example')
+    build: path.join(__dirname, 'public'),
 };
 
 if (!process.env.NODE_ENV) {
@@ -16,8 +15,7 @@ if (!process.env.NODE_ENV) {
 
 //example environment points at preloaded example
 //see: react-json-view/example/example.js
-const entrypoint = process.env.NODE_ENV === 'dev_server'
-  ? PATHS.example + '/example.js' : PATHS.js + '/index.js';
+const entrypoint = '/index.js';
 
 const config = {
   entry: [entrypoint],

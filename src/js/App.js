@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Scoreboard from './Scoreboard';
-import './App.css';
+import './../style/App.css';
 
 // const QUARTER_LENGTH = 720;
 const QUARTER_LENGTH = 3;
