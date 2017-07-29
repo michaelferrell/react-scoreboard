@@ -1,0 +1,242 @@
+/* WRAPPER OPTIONS
+ * =============== */
+.flex-wrap {
+    margin-right: auto;
+    margin-left: auto;
+}
+/* WRAPPER BREAKPOINTS
+ * =================== */
+
+@media (min-width:768px) {
+    .flex-wrap {
+        width: 100%;
+    }
+}
+@media (min-width:992px) {
+    .flex-wrap {
+        width: 100%
+    }
+}
+@media (min-width:1200px) {
+    .flex-wrap {
+        width: 100%;
+    }
+}
+
+/* THE FLEX MAGIC
+ * ============== */
+
+.flex-row {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    white-space: no-wrap
+}
+
+
+/* MOBILE SIZING
+ * ============= */
+
+@media(max-width: 767px) {
+    .flex-wrap-full {
+        width: 100%;
+    }
+   [class*=flex-c-] {
+    width: 100%
+   }
+
+   [class*=push-] {
+    margin-left: 0
+   }
+}
+
+/* COLUMN PADDING
+ * ============== */
+
+[class*=flex-] {
+    box-sizing: border-box;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    min-height: 1px;
+}
+
+/* RESPONSIVE IMAGES
+ * ================= */
+
+[class*=flex-] img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* APP STYLES
+ * ================= */
+
+html {
+  font-size: 16px;
+}
+body {
+  background-color: #111;
+  font-family: 'Roboto Mono', monospace;
+  font-family: 'Open Sans', sans-serif;
+}
+.scoreboard {
+  width: 95%;
+  max-width: 700px;
+  border: 3px solid #414141;
+  background-color: #313131;
+  margin: 0 auto;
+  margin-top: 40px;
+  border-radius: 5px;
+  color: #717171;
+  font-size: 1rem;
+  box-sizing: border-box;
+  padding-top: 25px;
+  padding-bottom: 20px;
+}
+.scoreboard .flex-col-timer {
+  width: 50%;
+  text-align: center;
+}
+.scoreboard .flex-col-score {
+  width: 25%;
+  text-align: center;
+}
+.scoreboard .timer-label {
+  font-size: 5.5rem;
+  line-height: 5.5rem;
+  margin-bottom: 5px;
+  color: #F79608;
+  border: 1px solid #919191;
+  border-radius: 5px;
+  padding-bottom: 14px;
+  margin-top: 3px;
+}
+.scoreboard .number-box > .display {
+  font-size: 5rem;
+  line-height: 5rem;
+  border: 1px solid #414141;
+  background-color: #3c3c3c;
+  -webkit-box-shadow: inset 0px 0px 15px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: inset 0px 0px 15px 0px rgba(0,0,0,0.75);
+  box-shadow: inset 0px 0px 15px 0px rgba(0,0,0,0.75);
+  text-align: center;
+  border-radius: 4px;
+  display: inline-block;
+}
+.scoreboard .number-box > .display.time {
+  width: 40%;
+  color: #F9BC32;
+}
+.scoreboard .number-box > .display.score {
+  width: 100%;
+  color: #D10505;
+  margin-top: 10px;
+  background-color: rgba(255,255,255,.01);
+  background-color: inherit;
+  -webkit-box-shadow: inset 0px 0px 15px 0px rgba(0,0,0,0.5);
+  -moz-box-shadow: inset 0px 0px 15px 0px rgba(0,0,0,0.5);
+  box-shadow: inset 0px 0px 15px 0px rgba(0,0,0,0.5);
+  font-size: 4rem;
+  line-height: 4rem;
+  color: #D10505;
+  padding: 2px;
+}
+.scoreboard .number-box > .colon {
+  font-size: 5rem;
+  line-height: 5rem;
+  color: #fff;
+  display: inline-block;
+  text-align: center;
+  width: 20%;
+}
+.scoreboard .team-label {
+  font-size: 1.8rem;
+  line-height: 1.8rem;
+}
+.scoreboard .label-bg {
+  background-color: rgba(0,0,0,0.4);
+  border-radius: 4px;
+  color: #919191;
+  text-transform: uppercase;
+  font-weight: 300;
+  padding: 2px 0;
+}
+.scoreboard .bonus-label {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  margin-top: 10px;
+}
+.scoreboard .period-label {
+  font-size: 1.2rem;
+  margin: 0 auto;
+  margin-top: 15px;
+  width: 50%;
+}
+.scoreboard .period-number {
+  color: #F9BC32;
+  font-size: 3rem;
+  line-height: 3rem;
+  display: inline-block;
+}
+.btn-pause {
+  margin-top: 100px;
+  margin-left: 10px;
+  background-color: #919191;
+  border: 1px solid #616161;
+  color: #212121;
+  border-radius: 3px;
+  padding: 3px 10px;
+}
+@media(max-width: 600px) {
+  .scoreboard .timer-label {
+    font-size: 3.5rem;
+    line-height: 3.5rem;
+  }
+  .scoreboard .team-label {
+    font-size: 1rem;
+    line-height: 1rem;
+  }
+  .scoreboard .score-label {
+    font-size: 3rem;
+    line-height: 3rem;
+  }
+  .scoreboard .bonus-label {
+    font-size: 1rem;
+  }
+  .scoreboard .period-label {
+    font-size: 1.1rem;
+  }
+  .scoreboard .period-number {
+    font-size: 2rem;
+    line-height: 2rem;
+  }
+}
+@media(max-width: 375px) {
+  .scoreboard .timer-label {
+    font-size: 2rem;
+    line-height: 2rem;
+  }
+  .scoreboard .team-label {
+    font-size: 1rem;
+    line-height: 1rem;
+  }
+  .scoreboard .score-label {
+    font-size: 2rem;
+    line-height: 2rem;
+  }
+  .scoreboard .bonus-label {
+    font-size: 1rem;
+  }
+  .scoreboard .period-label {
+    font-size: 1.1rem;
+  }
+  .scoreboard .period-number {
+    font-size: 1rem;
+    line-height: 1rem;
+  }
+}
