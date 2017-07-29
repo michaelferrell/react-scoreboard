@@ -34,8 +34,9 @@
     "react-dom": "^15.6.1"
   },
   "scripts": {
-    "prepare": "cp ./src/html/index.html.template ./public/index.html",
-    "dev": "npm run prepare && webpack-dev-server",
-    "build": "npm run prepare && webpack -p --display-error-details --progress"
+    "prepare:dev": "cp ./src/html/index.html.template ./dev-server/index.html",
+    "prepare:build": "cp ./src/html/index.html.template ./public/index.html",
+    "dev": "npm run prepare:dev && webpack-dev-server",
+    "build": "npm run prepare:build && webpack -p --display-error-details --progress"
   }
 }

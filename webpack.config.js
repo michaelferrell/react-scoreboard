@@ -7,6 +7,7 @@ const PATHS = {
     js: path.join(__dirname, 'src/js'),
     style: path.join(__dirname, 'src/style'),
     build: path.join(__dirname, 'public'),
+    devServer: path.join(__dirname, 'dev-server'),
 };
 
 if (!process.env.NODE_ENV) {
@@ -42,7 +43,7 @@ const config = {
     hot: true,
     inline: true,
     historyApiFallback: true,
-    contentBase: PATHS.build
+    contentBase: PATHS.devServer
   },
   output: {
     path: PATHS.build,
