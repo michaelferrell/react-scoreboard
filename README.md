@@ -1,7 +1,7 @@
 # react-scoreboard
 react-scoreboard is a scoreboard component written for React.
 
-[Live Component Demo](https://github.com/michaelferrell/public/)
+[Live Component Demo](https://michaelferrell.github.io/react-scoreboard/public/)
 
 ## Contribute
 run the dev serve with :
