@@ -28,3 +28,7 @@ ol, ul {
 * {
 	box-sizing: border-box;
 }
+[class*=flex-] img {
+  max-width: 100%;
+  height: auto;
+}

@@ -1,0 +1,21 @@
+.flex-wrap {
+  @include center();
+  width: 100%;
+}
+.flex-row {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  white-space: no-wrap
+}
+[class*=flex-] {
+  box-sizing: border-box;
+  padding-left: 15px;
+  padding-right: 15px;
+  position: relative;
+  min-height: 1px;
+}

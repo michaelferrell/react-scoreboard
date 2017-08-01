@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import Scoreboard from './Scoreboard';
 import './../style/App.css';
 
-// const QUARTER_LENGTH = 720;
-const QUARTER_LENGTH = 3;
+const QUARTER_LENGTH = 720;
+// const QUARTER_LENGTH = 3;
 const QUARTERS = 4;
 
 class App extends Component {

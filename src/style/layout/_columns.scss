@@ -1,0 +1,15 @@
+.scoreboard .flex-col-timer,
+.scoreboard .flex-col-score {
+	@include text-center();
+}
+.scoreboard .flex-col-timer {
+	width: 50%;
+}
+.scoreboard .flex-col-score {
+	width: 25%;
+}
+@media ($screen-md-less) {
+	.scoreboard .flex-col-score {
+		padding: 0;
+	}
+}

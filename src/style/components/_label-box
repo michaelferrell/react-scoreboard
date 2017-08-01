@@ -1,0 +1,18 @@
+.scoreboard .label-box {
+  background-color: rgba(0, 0, 0, 0.4);
+  @include rounded(4px);
+  text-transform: uppercase;
+  padding: 2px 0;
+}
+.scoreboard .label-box > .label-text {
+  @include font-constructor(1.8rem, 300, 1.8rem);
+  color: $grey;
+}
+@media($screen-md-less) {
+	.scoreboard .label-box {
+	  padding: 4px 0;
+	}
+  .scoreboard .label-box > .label-text {
+  	@include font-constructor(1.1rem, 300, 1.1rem);
+  }
+}

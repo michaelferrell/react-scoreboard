@@ -1,0 +1,47 @@
+.scoreboard .number-box {
+  margin-bottom: 10px;
+}
+.scoreboard .number-box > .display {
+  @include inset-box-shadow(.75);
+  background-color: #3c3c3c;
+  border: 1px solid #414141;
+  border-radius: 4px;
+  display: inline-block;
+  text-align: center;
+}
+.scoreboard .number-box > .display.time {
+  @include font-constructor(5rem, 400, 5rem);
+  color: $yellow;
+  width: 40%;
+  padding: 3px;
+}
+.scoreboard .number-box > .display.score {
+  @include inset-box-shadow(.5);
+  @include font-constructor(4rem, 400, 4rem);
+  background-color: inherit;
+  color: $red;
+  margin-top: 10px;
+  padding: 3px;
+  width: 100%;
+}
+.scoreboard .number-box > .colon {
+  @include font-constructor(5rem, 400, 5rem);
+  color: $white;
+  display: inline-block;
+  text-align: center;
+  width: 20%;
+}
+@media($screen-md-less) {
+  .scoreboard .number-box > .display.time,
+  .scoreboard .number-box > .colon,
+  .scoreboard .number-box > .display.score {
+    @include font-constructor(3.2rem, 400, 3.2rem);
+  }
+}
+@media($screen-sm-less) {
+  .scoreboard .number-box > .display.time,
+  .scoreboard .number-box > .colon,
+  .scoreboard .number-box > .display.score {
+    @include font-constructor(1.8rem, 400, 1.8rem);
+  }
+}

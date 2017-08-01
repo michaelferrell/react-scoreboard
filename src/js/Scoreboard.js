@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Time from './Time';
+import LabelBox from './LabelBox';
+import NumberBox from './NumberBox';
 
 class Scoreboard extends Component {
   render() {
@@ -8,23 +10,17 @@ class Scoreboard extends Component {
         <div className="flex-wrap">
           <div className="flex-row">
             <div className="flex-col-score">
-              <div className="label-bg team-label">Home</div>
-              <div className="number-box">
-                <span className="display score">{this.props.home_score}</span>
-              </div>
-              <div className="bonus-label">Bonus</div>
+              <LabelBox label="Home"></LabelBox>
+              <NumberBox score={this.props.home_score}></NumberBox>
             </div>
             <div className="flex-col-timer">
               <Time time={this.props.time}></Time>
-              <div className="label-bg period-label">Period</div>
+              <LabelBox label="Period"></LabelBox>
               <div className="period-number">{this.props.period}</div>
             </div>
             <div className="flex-col-score">
-              <div className="label-bg team-label">Away</div>
-              <div className="number-box">
-                <span className="display score">{this.props.visitor_score}</span>
-              </div>
-              <div className="bonus-label">Bonus</div>
+              <LabelBox label="Away"></LabelBox>
+              <NumberBox score={this.props.visitor_score}></NumberBox>
             </div>
           </div>
         </div>

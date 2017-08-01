@@ -1,0 +1,10 @@
+.scoreboard .period-number {
+  @include font-constructor(2rem, 500, 2rem);
+  color: $yellow;
+  margin-top: 5px;
+}
+@media($screen-md-less) {
+  .scoreboard .period-number {
+    @include font-constructor(1.5rem, 400, 1.5rem);
+  }
+}

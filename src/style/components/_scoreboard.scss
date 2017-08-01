@@ -1,0 +1,12 @@
+.scoreboard {
+  @include center();
+  @include rounded(5px);
+  background-color: $sb-bg;
+  border: $sb-brd;
+  color: $sb-default-color !important;
+  font-size: $sb-default-font-size;
+  max-width: $sb-max-width;
+  margin-top: 40px;
+  padding: 25px 0 20px 0;
+  width: 95%;
+}
