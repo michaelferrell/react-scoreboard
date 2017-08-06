@@ -1,31 +1,11 @@
 /*
- * SASS Modules
- *
- * keeps units of code cleanly separated and organized
- * maintainability
- * namespacing
- * reusability
- *
- * Golden rules of SASS Modules
- *
- * never import a module in your main file
- * never use more than one mixin/function per module
- * never add code to modules that generates CSS code after compilation
- * never use a function or mixin that was not imported from before
- *
+ * The central hub for SASS code
  *
  */
 
-
-@import 'helpers/_variables';
-@import 'helpers/_mixins';
+@import 'helpers/_all';
 @import 'themes/_dark';
 @import 'base/_reset';
 @import 'base/_typography';
-@import 'layout/_flex';
-@import 'layout/_columns';
-@import 'components/_scoreboard';
-@import 'components/_buttons';
-@import 'components/_number-box';
-@import 'components/_label-box';
-@import 'components/_period-box';
+@import 'layout/_all';
+@import 'modules/_all';
