@@ -5,6 +5,7 @@ const wds_port = 3000;
 const PATHS = {
     src: path.join(__dirname, 'src'),
     js: path.join(__dirname, 'src/js'),
+    fonts: path.join(__dirname, 'src/fonts/'),
     style: path.join(__dirname, 'src/style'),
     build: path.join(__dirname, 'public'),
     devServer: path.join(__dirname, 'dev-server'),
@@ -61,6 +62,16 @@ const config = {
   devtool: process.env.NODE_ENV == 'production' ? false : 'eval-source-map',
   module: {
     rules: [
+      {
+        // http://www.fontriver.com/font/dot_matrix/download.html
+        // https://transfonter.org/
+        test: /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9=&.]+)?$/,
+        use: [
+          {
+            loader: 'file-loader'
+          }
+        ]
+      },
       {
         test: /\.jsx?$/,
         use: [

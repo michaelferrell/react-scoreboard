@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
-import Time from './Time';
+import GameClock from './GameClock';
 import LabelBox from './LabelBox';
 import NumberBox from './NumberBox';
+import PeriodBox from './PeriodBox';
 
 class Scoreboard extends Component {
   render() {
     return (
-      <article className="scoreboard">
+      <article className="scoreboard thseme-pinkX">
         <div className="flex-wrap">
           <div className="flex-row">
             <div className="flex-col-score">
@@ -14,9 +15,9 @@ class Scoreboard extends Component {
               <NumberBox score={this.props.home_score}></NumberBox>
             </div>
             <div className="flex-col-timer">
-              <Time time={this.props.time}></Time>
-              <LabelBox label="Period"></LabelBox>
-              <div className="period-number">{this.props.period}</div>
+              <GameClock time={this.props.time}></GameClock>
+              <LabelBox label="Period" type="period"></LabelBox>
+              <PeriodBox total_periods={this.props.total_periods} cur_period={this.props.cur_period}></PeriodBox>
             </div>
             <div className="flex-col-score">
               <LabelBox label="Away"></LabelBox>

@@ -10,3 +10,13 @@
   padding: 25px 0 20px 0;
   width: 95%;
 }
+@media($screen-md-less) {
+  .scoreboard {
+    max-width: 575px;
+  }
+}
+@media($screen-sm-less) {
+  .scoreboard {
+    max-width: 100%;
+  }
+}

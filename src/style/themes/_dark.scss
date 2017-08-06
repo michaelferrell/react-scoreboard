@@ -1,3 +1,36 @@
 body {
   background-color: $black;
 }
+.scoreboard.theme-pink {
+  background-color: #ef73a3;
+  border: 3px solid #ef73a3;
+}
+.scoreboard.theme-pink .number-box > .display {
+  background-color: #262421;
+  border: 1px solid green;
+}
+.scoreboard.theme-pink .number-box > .display.time {
+  color: #e73772;
+}
+.scoreboard.theme-pink .number-box > .display.score {
+  color: #e73772;
+  margin-top: 10px;
+  padding: 3px;
+  width: 100%;
+}
+.scoreboard .number-box > .colon {
+  @include font-constructor(5rem, 400, 5rem);
+  color: $white;
+  display: inline-block;
+  text-align: center;
+  width: 20%;
+}
+.scoreboard.theme-pink .label-box {
+  background-color: inherit;
+}
+.scoreboard.theme-pink .label-box > .label-text {
+  color: #fff;
+}
+.scoreboard.theme-pink .period-number {
+  color: #fff;
+}

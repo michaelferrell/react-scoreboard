@@ -17,3 +17,11 @@
 @mixin rounded($px) {
 	border-radius: $px;
 }
+@mixin circle($display-type, $width, $height, $bg-color, $margin) {
+	background-color: $bg-color;
+	border-radius: 100%;
+	display: $display-type;
+	height: $height;
+	margin: $margin;
+	width: $width;
+}

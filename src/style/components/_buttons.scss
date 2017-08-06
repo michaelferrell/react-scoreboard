@@ -1,9 +1,11 @@
-.btn-pause {
-  margin-top: 100px;
-  margin-left: 10px;
-  background-color: #919191;
-  border: 1px solid #616161;
-  color: #212121;
+.toolbar {
+	text-align: center;
+}
+.btn-demo {
+	margin: 50px 10px;
+  background-color: rgba(255,255,255,.2);
+  border: 1px solid rgba(255,255,255,.1);;
+  color: $grey;
   border-radius: 3px;
   padding: 3px 10px;
 }

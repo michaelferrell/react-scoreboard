@@ -1,5 +1,7 @@
 // font family
 $open-sans: 'Open Sans', sans-serif;
+$digital-7: 'Digital-7', sans-serif;
+$dot-matrix: 'Dot Matrix', sans-serif;
 
 // font sizes
 $base-font-size: 16px;
@@ -7,16 +9,19 @@ $base-font-size: 16px;
 // color palette
 $black:  #111;
 $white:  #FFF;
+$pink:   #ea4c89;
 $red:    #D10505;
 $yellow: #F9BC32;
-$grey:   #656565;
+$grey:   #858585;
 
-// sb defaults (scoreboard)
+// sb (scoreboard) defaults
 $sb-bg: #313131;
 $sb-default-color: #717171;
 $sb-brd: 3px solid #414141;
 $sb-default-font-size: 1rem;
 $sb-max-width: 700px;
+
+// sb theme pink
 
 // device sizes
 $screen-lg-less: 'max-width: 1200px';
