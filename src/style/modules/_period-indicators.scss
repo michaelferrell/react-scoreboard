@@ -1,0 +1,31 @@
+/*
+ * Period Indicators Module
+ */
+
+@import 'helpers/variables/_period-indicators';
+
+.scoreboard {
+	.period-indicators {
+		margin-top: 10px;
+	}
+	.period-indicators > .indicator-item {
+		@include circle(
+			$indicator-size,
+			$indicator-display,
+			$indicator-radius,
+			$indicator-margin,
+			$indicator-bg-color
+		);
+	}
+	.period-indicators > .indicator-item[data-active="true"] {
+		background-color: $indicator-active-color;
+	}
+	@media($screen-md-less) {
+		.period-indicators {
+			margin-top: 5px;
+		}
+		.period-indicators > .indicator-item {
+			@include circle($indicator-size--md, null, null, $indicator-margin--md);
+		}
+	}
+}

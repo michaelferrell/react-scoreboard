@@ -1,0 +1,104 @@
+.scoreboard .number-box {
+  margin-bottom: 10px;
+}
+.scoreboard .number-box > .display {
+  @include inset-box-shadow(.75);
+  background-color: #3c3c3c;
+  border: 1px solid #414141;
+  border-radius: 4px;
+  display: inline-block;
+  font-family: $digital-7;
+  text-align: center;
+}
+.scoreboard .number-box > .display.time {
+  @include font-constructor(5rem, 400, 5rem);
+  color: $yellow;
+  width: 40%;
+  padding: 3px;
+}
+.scoreboard .number-box > .display.score {
+  @include inset-box-shadow(.5);
+  @include font-constructor(4rem, 400, 4rem);
+  background-color: inherit;
+  color: $red;
+  margin-top: 10px;
+  padding: 3px;
+  width: 100%;
+}
+.scoreboard .number-box .solo-digit-box {
+  display: block;
+  float: left;
+  height: 77px;
+  position: relative;
+}
+.scoreboard .number-box .score .solo-digit-box {
+  // height of score box
+  height: 61px;
+}
+.scoreboard .number-box .solo-digit-box.third {
+  // box for 3 digit numbers
+  width: 33.33%;
+}
+.scoreboard .number-box .solo-digit-box.half {
+  // box for 2 digit numbers
+  width: 50%;
+}
+.scoreboard .number-box .solo-digit-box > .silhouette {
+  opacity: .1;
+  z-index: 10;
+}
+.scoreboard .number-box .score .solo-digit-box > .silhouette {
+  opacity: .15
+}
+.scoreboard .number-box .solo-digit-box > .live {
+  z-index: 20;
+}
+.scoreboard .number-box .solo-digit-box > .silhouette,
+.scoreboard .number-box .solo-digit-box > .live {
+  position: absolute;
+  left: auto;
+  top: 0;
+  text-align: right;
+  width: 90%;
+  padding-right: 5%;
+}
+.scoreboard .number-separator {
+  @include font-constructor(4.8rem, 400, 4.8rem);
+  color: $grey;
+  display: inline-block;
+  text-align: center;
+  vertical-align: top;
+  width: 20%;
+}
+@media($screen-md-less) {
+  .scoreboard .number-box > .display.time,
+  .scoreboard .number-box > .display.score {
+    @include font-constructor(3.2rem, 400, 3.2rem);
+  }
+  .scoreboard .number-box .solo-digit-box {
+    height: 50px;
+  }
+  .scoreboard .number-box .score .solo-digit-box {
+    height: 52px;
+  }
+  .scoreboard .number-separator {
+    @include font-constructor(3rem, 400, 3rem);
+    width: 15%;
+  }
+}
+@media($screen-sm-less) {
+  .scoreboard .number-box > .display.time,
+  .scoreboard .number-box > .display.score {
+    @include font-constructor(1.8rem, 400, 1.8rem);
+  }
+  .scoreboard .number-box .solo-digit-box {
+    height: 29px;
+  }
+  .scoreboard .number-box .score .solo-digit-box {
+    height: 28px;
+  }
+  .scoreboard .number-separator {
+    @include font-constructor(2rem, 400, 2rem);
+    width: 17%;
+  }
+}

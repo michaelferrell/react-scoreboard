@@ -1,0 +1,14 @@
+/*
+ * Variables for the Period Indicators module
+ */
+
+$indicator-size: 10px;
+$indicator-display: inline-block;
+$indicator-radius: $circle-radius;
+$indicator-margin: 0 10px;
+$indicator-bg-color: $grey;
+$indicator-active-color: $yellow;
+
+// screen-md-less
+$indicator-size--md: 6px;
+$indicator-margin--md: 0 5px;
