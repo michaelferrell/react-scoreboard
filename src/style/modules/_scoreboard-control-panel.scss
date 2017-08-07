@@ -1,0 +1,29 @@
+/*
+ * scoreboard-control-panel module
+ *
+ * Defines a _scoreboard-control-panel module
+ *
+ * @return {mixin} _scoreboard-control-panel
+ */
+
+@import 'helpers/mixins/_box-model-constructor';
+
+@mixin scoreboard-control-panel() {
+	// styles
+	.scoreboard-control-panel {
+		@include text-center();
+	}
+	.btn-demo {
+	  color: $grey;
+	  @include box-model-constructor(
+	  	null,
+	  	null,
+	  	null,
+	  	3px,
+	  	50px 10px,
+	  	3px 10px,
+	  	rgba(255,255,255,.2),
+	  	1px solid rgba(255,255,255,.1)
+	  )
+	}
+}

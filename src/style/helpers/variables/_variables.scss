@@ -1,0 +1,45 @@
+/*
+ * Global variables
+ */
+
+// color palette
+$color-lighten: 10%;
+$color-darken: 10%;
+
+// color palette
+$black:    #111111;
+$white:    #FFFFFF;
+$pink:     #ea4c89;
+$red:      #D10505;
+$yellow:   #F9BC32;
+$grey:     #858585;
+$charcoal: #313131;
+
+// color palette lightened
+$charcoal--light: lighten($charcoal, $color-lighten);
+
+// color palette darkened
+$charcoal--dark: darken($charcoal, $color-darken);
+
+// typography
+$open-sans: 'Open Sans', sans-serif;
+$digital-7: 'Digital-7', sans-serif;
+$dot-matrix: 'Dot Matrix', sans-serif;
+$base-font-size: 16px;
+$base-font-weight: 400;
+$base-font-color: $grey;
+
+// device sizes
+$screen-lg-less: 'max-width: 1200px';
+$screen-md-less: 'max-width: 767px';
+$screen-sm-less: 'max-width: 480px';
+
+// column percentages
+$half-width: 50%;
+$quarter-width: 25%;
+$full-width: 100%;
+
+// component variables
+$circle-radius: 50%;
+$box-model-padding: 0 15px;
+$default-rounded: 4px;

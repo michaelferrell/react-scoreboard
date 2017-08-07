@@ -1,0 +1,19 @@
+/*
+ * Font-constructor mixin
+ */
+
+@mixin font-constructor(
+	$size,
+	$line-height,
+	$weight: null,
+	$color: null
+	) {
+		font-size: $size;
+		line-height: $line-height;
+		@if $weight {
+			font-weight: $weight;
+		}
+		@if $color {
+			color: $color;
+		}
+}

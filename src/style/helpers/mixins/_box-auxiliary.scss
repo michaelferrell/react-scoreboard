@@ -1,0 +1,12 @@
+/*
+ * Box-auxiliary mixin
+ */
+
+@mixin box-auxiliary($padding: null) {
+  box-sizing: border-box;
+  position: relative;
+  min-height: 1px;
+  @if padding {
+  	padding: $padding;
+  }
+}
