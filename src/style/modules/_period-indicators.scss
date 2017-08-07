@@ -1,32 +1,61 @@
 /*
- * Period Indicators Module
+ * period-indicators module
+ *
+ * Defines a period-indicators module
+ *
+ * @return {mixin} The period-indicators
  */
 
-@import 'helpers/variables/_period-indicators';
-@import 'helpers/mixins/_circle';
+@import 'helpers/mixins/_box-model-constructor';
 
-.scoreboard {
+@mixin period-indicators() {
+
+	// variables
+	$indicator-width: 10px;
+	$indicator-height: 10px;
+	$indicator-display: inline-block;
+	$indicator-radius: $circle-radius;
+	$indicator-margin: 0 10px;
+	$indicator-padding: 0;
+	$indicator-bg-color: $grey;
+	$indicator-active-color: $yellow;
+	// screen-md-less
+	$indicator-width--md: 7px;
+	$indicator-height--md: 7px;
+	$indicator-margin--md: 0 5px;
+
+	// styles
 	.period-indicators {
 		margin-top: 10px;
-	}
-	.period-indicators > .indicator-item {
-		@include circle(
-			$indicator-size,
-			$indicator-display,
-			$indicator-radius,
-			$indicator-margin,
-			$indicator-bg-color
-		);
-	}
-	.period-indicators > .indicator-item[data-active="true"] {
-		background-color: $indicator-active-color;
-	}
-	@media($screen-md-less) {
-		.period-indicators {
-			margin-top: 5px;
-		}
-		.period-indicators > .indicator-item {
-			@include circle($indicator-size--md, null, null, $indicator-margin--md);
+
+		> .indicator-item {
+			@include box-model-constructor(
+				$indicator-width,
+				$indicator-height,
+				$indicator-display,
+				$indicator-radius,
+				$indicator-margin,
+				$indicator-padding,
+				$indicator-bg-color
+			);
+
+			&[data-active="true"] {
+				background-color: $indicator-active-color;
+			}
+
+			@media($screen-md-less) {
+				margin-top: 5px;
+
+				> .indicator-item {
+					@include box-model-constructor(
+						$indicator-width--md,
+						$indicator-height--md,
+						null,
+						null,
+						$indicator-margin--md
+					);
+				}
+			}
 		}
 	}
 }

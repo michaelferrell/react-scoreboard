@@ -1,14 +1,18 @@
 /*
- * Flex-row layout
+ * flex-row layout
+ *
+ * Defines a flex-row layout
+ *
+ * @return {mixin} The flex-row
  */
-
 @import 'helpers/mixins/_flex';
-@import 'helpers/mixins/_box-model-constructor';
+@import 'helpers/mixins/_box-auxiliary';
 
-.scoreboard {
+@mixin flex-row() {
+	// styles
 	.flex-row {
 		@include flex();
-		@include box-model-constructor($box-model-padding);
+		@include box-auxiliary($box-model-padding);
 	  white-space: no-wrap;
 	  -webkit-flex-wrap: wrap;
 	      -ms-flex-wrap: wrap;

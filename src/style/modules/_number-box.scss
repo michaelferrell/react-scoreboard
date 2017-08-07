@@ -1,104 +1,133 @@
-.scoreboard .number-box {
-  margin-bottom: 10px;
-}
-.scoreboard .number-box > .display {
-  @include inset-box-shadow(.75);
-  background-color: #3c3c3c;
-  border: 1px solid #414141;
-  border-radius: 4px;
-  display: inline-block;
-  font-family: $digital-7;
-  text-align: center;
-}
-.scoreboard .number-box > .display.time {
-  @include font-constructor(5rem, 400, 5rem);
-  color: $yellow;
-  width: 40%;
-  padding: 3px;
-}
-.scoreboard .number-box > .display.score {
-  @include inset-box-shadow(.5);
-  @include font-constructor(4rem, 400, 4rem);
-  background-color: inherit;
-  color: $red;
-  margin-top: 10px;
-  padding: 3px;
-  width: 100%;
-}
-.scoreboard .number-box .solo-digit-box {
-  display: block;
-  float: left;
-  height: 77px;
-  position: relative;
-}
-.scoreboard .number-box .score .solo-digit-box {
-  // height of score box
-  height: 61px;
-}
-.scoreboard .number-box .solo-digit-box.third {
-  // box for 3 digit numbers
-  width: 33.33%;
-}
-.scoreboard .number-box .solo-digit-box.half {
-  // box for 2 digit numbers
-  width: 50%;
-}
-.scoreboard .number-box .solo-digit-box > .silhouette {
-  opacity: .1;
-  z-index: 10;
-}
-.scoreboard .number-box .score .solo-digit-box > .silhouette {
-  opacity: .15
-}
-.scoreboard .number-box .solo-digit-box > .live {
-  z-index: 20;
-}
-.scoreboard .number-box .solo-digit-box > .silhouette,
-.scoreboard .number-box .solo-digit-box > .live {
-  position: absolute;
-  left: auto;
-  top: 0;
-  text-align: right;
-  width: 90%;
-  padding-right: 5%;
-}
-.scoreboard .number-separator {
-  @include font-constructor(4.8rem, 400, 4.8rem);
-  color: $grey;
-  display: inline-block;
-  text-align: center;
-  vertical-align: top;
-  width: 20%;
-}
-@media($screen-md-less) {
-  .scoreboard .number-box > .display.time,
-  .scoreboard .number-box > .display.score {
-    @include font-constructor(3.2rem, 400, 3.2rem);
-  }
-  .scoreboard .number-box .solo-digit-box {
-    height: 50px;
-  }
-  .scoreboard .number-box .score .solo-digit-box {
-    height: 52px;
-  }
-  .scoreboard .number-separator {
-    @include font-constructor(3rem, 400, 3rem);
-    width: 15%;
-  }
-}
-@media($screen-sm-less) {
-  .scoreboard .number-box > .display.time,
-  .scoreboard .number-box > .display.score {
-    @include font-constructor(1.8rem, 400, 1.8rem);
-  }
-  .scoreboard .number-box .solo-digit-box {
-    height: 29px;
-  }
-  .scoreboard .number-box .score .solo-digit-box {
-    height: 28px;
-  }
-  .scoreboard .number-separator {
-    @include font-constructor(2rem, 400, 2rem);
-    width: 17%;
+/*
+ * number-box module
+ *
+ * Defines a number-box module
+ *
+ * @return {mixin} The number-box
+ */
+
+@import 'helpers/mixins/_font-constructor';
+@import 'helpers/mixins/_box-model-constructor';
+
+@mixin number-box() {
+
+  // variables
+  $num-box-display: inline-block;
+  $num-box-radius: 4px;
+  $num-box-margin: 0 10px;
+  $num-box-bg-color: #3c3c3c;
+  $num-box-border: 1px solid #414141;
+  $num-box-txt-align: center;
+
+  // styles
+  .number-box {
+    margin-bottom: 10px;
+
+    > .display {
+      @include inset-box-shadow(.75);
+      @include box-model-constructor(
+        null,
+        null,
+        $num-box-display,
+        $num-box-radius,
+        null,
+        null,
+        $num-box-bg-color,
+        $num-box-border,
+        $num-box-txt-align
+      );
+      font-family: $digital-7;
+    }
+    > .display.time {
+      @include font-constructor(5rem, 5rem, 400, $yellow);
+      width: 40%;
+      padding: 3px;
+    }
+    > .display.score {
+      @include inset-box-shadow(.5);
+      @include font-constructor(4rem, 4rem, 400, $red);
+      background-color: inherit;
+      margin-top: 10px;
+      padding: 3px;
+      width: 100%;
+    }
+    .solo-digit-box {
+      display: block;
+      float: left;
+      height: 77px;
+      position: relative;
+    }
+    .score .solo-digit-box {
+      // height of score box
+      height: 61px;
+    }
+    .solo-digit-box.third {
+      // box for 3 digit numbers
+      width: 33.33%;
+    }
+    .solo-digit-box.half {
+      // box for 2 digit numbers
+      width: 50%;
+    }
+    .solo-digit-box > .silhouette {
+      opacity: .1;
+      z-index: 10;
+    }
+    .score .solo-digit-box > .silhouette {
+      opacity: .15
+    }
+    .solo-digit-box > .live {
+      z-index: 20;
+    }
+    .solo-digit-box > .silhouette,
+    .solo-digit-box > .live {
+      position: absolute;
+      left: auto;
+      top: 0;
+      text-align: right;
+      width: 90%;
+      padding-right: 5%;
+    }
+    .number-separator {
+      @include font-constructor(4.8rem, 4.8rem, 400, $grey);
+      display: inline-block;
+      text-align: center;
+      vertical-align: top;
+      width: 20%;
+    }
+
+    @media($screen-md-less) {
+      > .display.time,
+      > .display.score {
+        @include font-constructor(3.2rem, 3.2rem);
+      }
+      .solo-digit-box {
+        height: 50px;
+      }
+      .score .solo-digit-box {
+        height: 52px;
+      }
+      .number-separator {
+        @include font-constructor(3rem, 3rem);
+        width: 15%;
+      }
+    }
+
+    @media($screen-sm-less) {
+      > .display.time,
+      > .display.score {
+        @include font-constructor(1.8rem, 1.8rem, 400);
+      }
+      .solo-digit-box {
+        height: 29px;
+      }
+      .score .solo-digit-box {
+        height: 28px;
+      }
+      .number-separator {
+        @include font-constructor(2rem, 2rem, 400);
+        width: 17%;
+      }
+    }
   }
 }

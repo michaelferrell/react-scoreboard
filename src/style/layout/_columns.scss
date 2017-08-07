@@ -1,14 +1,18 @@
 /*
- * Base column system layout
+ * columns layout
+ *
+ * Defines a columns layout
+ *
+ * @return {mixin} The columns
  */
+@import 'helpers/mixins/_box-auxiliary';
 
-@import 'helpers/mixins/_box-model-constructor';
-
-.scoreboard {
+@mixin columns() {
+	// styles
 	.col-center,
 	.col-score {
 		@include text-center();
-		@include box-model-constructor($box-model-padding);
+		@include box-auxiliary($box-model-padding);
 	}
 	.col-center {
 		width: $half-width;
@@ -22,3 +26,4 @@
 		}
 	}
 }
+

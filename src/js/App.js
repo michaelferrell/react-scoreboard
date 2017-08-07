@@ -90,7 +90,7 @@ class App extends Component {
           cur_period={this.state.cur_period}
           periods={this.state.total_periods}>
         </Scoreboard>
-        <div className="toolbar">
+        <div className="scoreboard-control-panel">
           <button className="btn-demo" onClick={this.addHomeScore}>
            +2 Home
           </button>

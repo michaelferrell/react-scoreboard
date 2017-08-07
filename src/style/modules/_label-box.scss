@@ -1,27 +1,41 @@
-.scoreboard .label-box {
-  background-color: rgba(0, 0, 0, 0.4);
-  @include rounded(4px);
-  text-transform: uppercase;
-  padding: 2px 0;
-}
-.scoreboard .label-box > .label-text {
-  @include font-constructor(1.8rem, 300, 1.8rem);
-  color: $grey;
-}
-.scoreboard .label-box.period-label {
-  @include center();
-  width: 55%;
-}
-@media($screen-md-less) {
-	.scoreboard .label-box {
-	  padding: 4px 0;
-	}
-  .scoreboard .label-box > .label-text {
-  	@include font-constructor(1.1rem, 300, 1.1rem);
-  }
-}
-@media($screen-sm-less) {
-  .scoreboard .label-box.period-label {
-    width: 90%;
+/*
+ * label-box module
+ *
+ * Defines a label-box module
+ *
+ * @return {mixin} The label-box
+ */
+
+@import 'helpers/mixins/_font-constructor';
+
+@mixin label-box() {
+  // styles
+  .label-box {
+    @include rounded(4px);
+    @include text-uppercase();
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 2px 0;
+
+    > .label-text {
+      @include font-constructor(1.8rem, 1.8rem, 300, $grey);
+    }
+    &.period-label {
+      @include center();
+      width: 55%;
+    }
+
+    @media($screen-md-less) {
+      padding: 4px 0;
+
+      > .label-text {
+        @include font-constructor(1.1rem, 1.1rem, 400);
+      }
+    }
+
+    @media($screen-sm-less) {
+      &.period-label {
+        width: 90%;
+      }
+    }
   }
 }

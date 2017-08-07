@@ -6,7 +6,17 @@
  */
 
 @import '_scoreboard';
-@import '_buttons';
 @import '_number-box';
 @import '_label-box';
 @import '_period-indicators';
+@import 'modules/_scoreboard-control-panel';
+
+.scoreboard {
+  @include scoreboard('dark');
+  @include label-box();
+  @include number-box();
+  @include period-indicators();
+}
+
+// control panel not part of scoreboard component
+@include scoreboard-control-panel();

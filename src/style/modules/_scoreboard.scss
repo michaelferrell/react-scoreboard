@@ -1,18 +1,47 @@
-.scoreboard {
+/*
+ * scoreboard module
+ *
+ * Defines scoreboard module
+ *
+ * @return {mixin} The scoreboard
+ */
+
+@mixin scoreboard($theme: null) {
+  // methods
+  @function setTheme($theme) {
+    @return '';
+  }
+  // variables
+  $sb-bg: $charcoal;
+  $sb-brd: 3px solid $charcoal--light;
+  $sb-default-font-size: 1rem;
+  $sb-max-width: 700px;
+  $sb-top-margin: 40px;
+  $sb-padding: 25px 0 20px 0;
+  $sb-max-width--m: 575px; // screen-md-less
+  $sb-max-width--s: $full-width; // screen-sm-less
+
+  // TODO
+  @if $theme == 'pink' {
+    //setTheme($theme);
+  } @else if $theme == 'dark' {
+    //setTheme($theme);
+  }
+
+  // styles
   @include center();
   @include rounded(5px);
   background-color: $sb-bg;
   border: $sb-brd;
-  color: $sb-default-color;
   font-size: $sb-default-font-size;
   max-width: $sb-max-width;
-  margin-top: 40px;
-  padding: 25px 0 20px 0;
-  width: 95%;
+  margin-top: $sb-top-margin;
+  padding: $sb-padding;
+
   @media($screen-md-less) {
-    max-width: 575px;
+    max-width: $sb-max-width--m;
   }
   @media($screen-sm-less) {
-    max-width: 100%;
+    max-width: $sb-max-width--s;
   }
 }

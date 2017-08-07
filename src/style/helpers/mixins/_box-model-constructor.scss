@@ -1,12 +1,56 @@
 /*
- * Box-model-constructor mixin
+ * box-model-constructor mixin
+ *
+ * Defines a box-model-constructor mixin
+ * @param @width      {number} The value that sets the width of the element
+ * @param @size       {number} The value that sets the height of the element
+ * @param @display    {string} The values that specifies the circles type of element
+ * @param @radius     {number} The value that adds rounded corners to an element
+ * @param @margin     {number} The value of the amount of spacing outside of a element
+ * @param @paddding   {number} The value of the amount of padding inside of a element
+ * @param @bg-color   {color}  The value that sets the background color of an element
+ * @param @border     {string} The value that creates a border around an element
+ * @param @$txt-align {string} The value that aligns inline elements in the specified direction
+ *
+ * @return {mixin} The box-model-constructor
  */
 
-@mixin box-model-constructor($padding: null) {
-  box-sizing: border-box;
-  position: relative;
-  min-height: 1px;
-  @if padding {
-  	padding: $padding;
-  }
+@mixin box-model-constructor(
+	$width:     null,
+	$height:    null,
+	$display:   null,
+	$radius:    null,
+	$margin:    null,
+	$padding:   null,
+	$bg-color:  null,
+	$border:    null,
+	$txt-align: null
+	) {
+		@if $width {
+			width: $width;
+		}
+		@if $height {
+			height: $height;
+		}
+		@if $display {
+			display: $display;
+		}
+		@if $radius {
+			border-radius: $radius;
+		}
+		@if $margin {
+			margin: $margin;
+		}
+		@if $padding {
+			padding: $padding;
+		}
+		@if $bg-color {
+			background-color: $bg-color;
+		}
+		@if $border {
+			border: $border;
+		}
+		@if $txt-align {
+			text-align: $txt-align;
+		}
 }
