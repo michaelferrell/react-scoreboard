@@ -1,0 +1,17 @@
+/*
+ * Flex-row layout
+ */
+
+@import 'helpers/mixins/_flex';
+@import 'helpers/mixins/_box-model-constructor';
+
+.scoreboard {
+	.flex-row {
+		@include flex();
+		@include box-model-constructor($box-model-padding);
+	  white-space: no-wrap;
+	  -webkit-flex-wrap: wrap;
+	      -ms-flex-wrap: wrap;
+	          flex-wrap: wrap;
+	}
+}

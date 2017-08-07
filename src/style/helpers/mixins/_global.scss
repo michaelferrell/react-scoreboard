@@ -1,0 +1,22 @@
+@mixin inset-box-shadow($alpha) {
+  -webkit-box-shadow: inset 0px 0px 15px 0px rgba(0, 0, 0, $alpha);
+     -moz-box-shadow: inset 0px 0px 15px 0px rgba(0, 0, 0, $alpha);
+          box-shadow: inset 0px 0px 15px 0px rgba(0, 0, 0, $alpha);
+}
+@mixin font-constructor($size, $weight, $line-height) {
+	font-size: $size;
+	font-weight: $weight;
+	line-height: $line-height;
+}
+@mixin center() {
+	margin: 0 auto;
+}
+@mixin text-center() {
+	text-align: center;
+}
+@mixin rounded($px) {
+	border-radius: $px;
+}
+@mixin no-pad() {
+	padding: 0;
+}

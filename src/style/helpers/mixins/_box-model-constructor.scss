@@ -1,0 +1,12 @@
+/*
+ * Box-model-constructor mixin
+ */
+
+@mixin box-model-constructor($padding: null) {
+  box-sizing: border-box;
+  position: relative;
+  min-height: 1px;
+  @if padding {
+  	padding: $padding;
+  }
+}

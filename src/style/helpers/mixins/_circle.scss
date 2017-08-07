@@ -1,0 +1,27 @@
+/*
+ * Circle mixin
+ */
+
+@mixin circle(
+	$size,
+	$display:  null,
+	$radius:   null,
+	$margin:   null,
+	$bg-color: null,
+	$border:   null
+	) {
+		width: $size;
+		height: $size;
+		@if $radius {
+			border-radius: $radius;
+		}
+		@if $display {
+			display: $display;
+		}
+		@if $margin {
+			margin: $margin;
+		}
+		@if $bg-color {
+			background-color: $bg-color;
+		}
+}
