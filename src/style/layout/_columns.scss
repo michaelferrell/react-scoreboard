@@ -1,15 +1,24 @@
-.scoreboard .flex-col-timer,
-.scoreboard .flex-col-score {
-	@include text-center();
-}
-.scoreboard .flex-col-timer {
-	width: 50%;
-}
-.scoreboard .flex-col-score {
-	width: 25%;
-}
-@media ($screen-md-less) {
-	.scoreboard .flex-col-score {
-		padding: 0;
+/*
+ * Base column system layout
+ */
+
+@import 'helpers/mixins/_box-model-constructor';
+
+.scoreboard {
+	.col-center,
+	.col-score {
+		@include text-center();
+		@include box-model-constructor($box-model-padding);
+	}
+	.col-center {
+		width: $half-width;
+	}
+	.col-score {
+		width: $quarter-width;
+	}
+	@media ($screen-md-less) {
+		.col-score {
+			@include no-pad();
+		}
 	}
 }

@@ -8,21 +8,19 @@ class Scoreboard extends Component {
   render() {
     return (
       <article className="scoreboard">
-        <div className="flex-wrap">
-          <div className="flex-row">
-            <div className="flex-col-score">
-              <LabelBox label="Home"></LabelBox>
-              <NumberBox score={this.props.home_score}></NumberBox>
-            </div>
-            <div className="flex-col-timer">
-              <GameClock time={this.props.time}></GameClock>
-              <LabelBox label="Period" type="period"></LabelBox>
-              <PeriodIndicators total_periods={this.props.total_periods} cur_period={this.props.cur_period}></PeriodIndicators>
-            </div>
-            <div className="flex-col-score">
-              <LabelBox label="Away"></LabelBox>
-              <NumberBox score={this.props.visitor_score}></NumberBox>
-            </div>
+        <div className="flex-row">
+          <div className="col-score">
+            <LabelBox label="Home"></LabelBox>
+            <NumberBox score={this.props.home_score}></NumberBox>
+          </div>
+          <div className="col-center">
+            <GameClock time={this.props.time}></GameClock>
+            <LabelBox label="Period" type="period"></LabelBox>
+            <PeriodIndicators total_periods={this.props.total_periods} cur_period={this.props.cur_period}></PeriodIndicators>
+          </div>
+          <div className="col-score">
+            <LabelBox label="Away"></LabelBox>
+            <NumberBox score={this.props.visitor_score}></NumberBox>
           </div>
         </div>
       </article>
