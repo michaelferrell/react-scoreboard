@@ -6,14 +6,18 @@
 	$size,
 	$line-height,
 	$weight: null,
-	$color: null
+	$color: null,
+	$family: null,
+	$style: null,
+	$transform: null,
+	$kerning: null
 	) {
 		font-size: $size;
 		line-height: $line-height;
-		@if $weight {
-			font-weight: $weight;
-		}
-		@if $color {
-			color: $color;
-		}
+		font-weight: $weight;
+		color: $color;
+		font-family: $family;
+		font-style: $style;
+		transform: $transform;
+		letter-spacing: $kerning;
 }

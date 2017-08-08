@@ -1,0 +1,20 @@
+/*
+ * circle mixin
+ */
+
+@mixin circle(
+  $size,
+  $display:   null,
+  $bg-color:  null,
+  $margin:    null,
+  $padding:   null,
+  $border:    null,
+  $txt-align: null
+) {
+  $type: 'circle';
+  @include box-size($type, $size)
+  @include box-model($margin, $padding, $border);
+  @include box-color($bg-color);
+  @include box-layout($display, $txt-align);
+  @include rounded($circle-radius);
+}

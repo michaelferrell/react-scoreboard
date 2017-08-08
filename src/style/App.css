@@ -7,3 +7,16 @@
 @import 'layout/_all';
 @import 'modules/_all';
 @import 'themes/_dark';
+
+// namespace the main components inside the scoreboard css class
+.scoreboard {
+  @include scoreboard('dark');
+  @include label-box();
+  @include number-box();
+  @include period-indicators();
+  @include flex-row();
+  @include columns();
+}
+
+// control panel not part of scoreboard component
+@include scoreboard-control-panel();

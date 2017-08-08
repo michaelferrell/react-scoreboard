@@ -7,8 +7,3 @@
 
 @import '_flex-row';
 @import '_columns';
-
-.scoreboard {
-  @include flex-row();
-  @include columns();
-}

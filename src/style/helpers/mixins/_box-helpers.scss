@@ -1,0 +1,29 @@
+/*
+ * Box Helper mixins
+ */
+
+@mixin box-layout($display: null, $txt-align: null) {
+  display: $display;
+  text-align: $txt-align;
+}
+
+@mixin box-size($type, $size: null, $width: null, $height: null) {
+  @if $type == 'circle' or $type == 'square' {
+    width: $size;
+    height: $size;
+  } @else if $type == 'rectangle' {
+    width:  $width;
+    height: $height;
+  }
+}
+
+@mixin box-model($margin: null, $padding: null, $border: null) {
+  margin:  $margin;
+  padding: $padding;
+  border:  $border;
+}
+
+@mixin box-color($bg-color, $color: null) {
+  background-color: $bg-color;
+  color: $color;
+}

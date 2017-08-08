@@ -1,0 +1,18 @@
+@mixin rectangle(
+  $width,
+  $height,
+  $display:   null,
+  $radius:    null,
+  $bg-color:  null,
+  $margin:    null,
+  $padding:   null,
+  $border:    null,
+  $txt-align: null
+) {
+  $type: 'rectangle';
+  @include box-size($type);
+  @include box-model($margin, $padding, $border);
+  @include box-color($bg-color);
+  @include rounded($radius)
+  @include box-layout($display, $txt-align);
+}

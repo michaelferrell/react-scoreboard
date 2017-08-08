@@ -1,5 +1,7 @@
 /*
  * box-model-constructor mixin
+ * supports optional arguments using the null data type
+ * giving a variable a null excludes it from the CSS output
  *
  * Defines a box-model-constructor mixin
  * @param @width      {number} The value that sets the width of the element
@@ -16,41 +18,23 @@
  */
 
 @mixin box-model-constructor(
-	$width:     null,
-	$height:    null,
-	$display:   null,
-	$radius:    null,
-	$margin:    null,
-	$padding:   null,
-	$bg-color:  null,
-	$border:    null,
-	$txt-align: null
-	) {
-		@if $width {
-			width: $width;
-		}
-		@if $height {
-			height: $height;
-		}
-		@if $display {
-			display: $display;
-		}
-		@if $radius {
-			border-radius: $radius;
-		}
-		@if $margin {
-			margin: $margin;
-		}
-		@if $padding {
-			padding: $padding;
-		}
-		@if $bg-color {
-			background-color: $bg-color;
-		}
-		@if $border {
-			border: $border;
-		}
-		@if $txt-align {
-			text-align: $txt-align;
-		}
+  $width:     null,
+  $height:    null,
+  $display:   null,
+  $radius:    null,
+  $margin:    null,
+  $padding:   null,
+  $bg-color:  null,
+  $border:    null,
+  $txt-align: null
+  ) {
+    width: $width;
+    height: $height;
+    display: $display;
+    border-radius: $radius;
+    margin: $margin;
+    padding: $padding;
+    background-color: $bg-color;
+    border: $border;
+    text-align: $txt-align;
 }

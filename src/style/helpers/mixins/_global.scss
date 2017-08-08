@@ -17,7 +17,7 @@
 	padding: 0;
 }
 @mixin text-uppercase() {
-	text-tranform: uppercase;
+	text-transform: uppercase;
 }
 @mixin pseudo($display: block, $pos: absolute, $content: '') {
 	content: $content;

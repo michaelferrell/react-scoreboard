@@ -6,18 +6,26 @@
  * @return {mixin} The label-box
  */
 
+@import 'helpers/mixins/_box-helpers';
 @import 'helpers/mixins/_font-constructor';
 
 @mixin label-box() {
+  // variables
+  $label-box-bg-color: rgba(0, 0, 0, 0.4);
+  $label-box-margin: 0;
+  $label-box-padding: 2px;
+  $label-box-border: 0;
+  // screen-md-less
+  $label-box-padding--md: 4px 0;
+
   // styles
   .label-box {
-    @include rounded(4px);
-    @include text-uppercase();
-    background-color: rgba(0, 0, 0, 0.4);
-    padding: 2px 0;
+    @include box-model($label-box-margin, $label-box-padding, $label-box-border);
+    @include box-color($label-box-bg-color);
+    @include rounded($default-rounded);
 
     > .label-text {
-      @include font-constructor(1.8rem, 1.8rem, 300, $grey);
+      @include font-constructor(1.7rem, 1.7rem, 300, $grey);
     }
     &.period-label {
       @include center();
@@ -25,7 +33,7 @@
     }
 
     @media($screen-md-less) {
-      padding: 4px 0;
+      padding: $label-box-padding--md;
 
       > .label-text {
         @include font-constructor(1.1rem, 1.1rem, 400);

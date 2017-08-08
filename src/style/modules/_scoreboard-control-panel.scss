@@ -7,6 +7,7 @@
  */
 
 @import 'helpers/mixins/_box-model-constructor';
+@import 'helpers/mixins/_font-constructor';
 
 @mixin scoreboard-control-panel() {
 	// styles
@@ -14,16 +15,9 @@
 		@include text-center();
 	}
 	.btn-demo {
-	  color: $grey;
-	  @include box-model-constructor(
-	  	null,
-	  	null,
-	  	null,
-	  	3px,
-	  	50px 10px,
-	  	3px 10px,
-	  	rgba(255,255,255,.2),
-	  	1px solid rgba(255,255,255,.1)
-	  )
+	  @include rounded($default-rounded);
+    @include box-color(rgba(255, 255, 255, .2));
+	  @include box-model(50px 10px, 3px 10px, 1px solid rgba(255,255,255,.1))
+		@include font-constructor(1.1rem, 1.1rem, 300, $grey)
 	}
 }
