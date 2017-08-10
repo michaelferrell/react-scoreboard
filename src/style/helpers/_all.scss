@@ -4,5 +4,8 @@
  * Collects all of the other partial files in this directory
  */
 
-@import 'variables/_variables';
+@import 'variables/_colors';
+@import 'variables/_media-queries';
+@import 'variables/_column-sizes';
+@import 'variables/_common-component-values';
 @import 'mixins/_global';

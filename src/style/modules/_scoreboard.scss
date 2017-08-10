@@ -17,13 +17,13 @@
   $sb-display: block;
   $sb-bg: $charcoal;
   $sb-brd: 3px solid $charcoal--light;
-  $sb-default-font-size: 1rem;
   $sb-max-width: 700px;
   $sb-top-margin: 40px;
   $sb-padding: 25px 0 20px 0;
   // screen-md-less
-  $sb-max-width--m: 575px; // screen-md-less
-  $sb-max-width--s: $full-width; // screen-sm-less
+  $sb-max-width--m: 575px;
+  // screen-sm-less
+  $sb-max-width--s: $full-width;
 
   // TODO
   @if $theme == 'pink' {
@@ -44,7 +44,6 @@
     $sb-brd
   );
   @include center();
-  font-size: $sb-default-font-size;
   max-width: $sb-max-width;
   margin-top: $sb-top-margin;
 

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import SoloDigitBox from './SoloDigitBox';
+import SingleDigitBox from './SingleDigitBox';
 import Helpers from './Helpers';
 
 class GameClock extends Component {
@@ -28,19 +28,17 @@ class GameClock extends Component {
 
   render() {
     return (
-    <section>
-      <div className="number-box">
-        <div className="display time">
-          <SoloDigitBox digit={this.displayDigit(this.props.time, 'minutes', 'ones')} digits="2"></SoloDigitBox>
-          <SoloDigitBox digit={this.displayDigit(this.props.time, 'minutes', 'tens')} digits="2"></SoloDigitBox>
+      <section>
+        <div className="integer-box integer-time">
+          <SingleDigitBox digit={this.displayDigit(this.props.time, 'minutes', 'ones')} digits="2"></SingleDigitBox>
+          <SingleDigitBox digit={this.displayDigit(this.props.time, 'minutes', 'tens')} digits="2"></SingleDigitBox>
         </div>
-        <span className="number-separator">:</span>
-        <div className="display time">
-          <SoloDigitBox digit={this.displayDigit(this.props.time, 'seconds', 'ones')} digits="2"></SoloDigitBox>
-          <SoloDigitBox digit={this.displayDigit(this.props.time, 'seconds', 'tens')} digits="2"></SoloDigitBox>
+        <div className="colon-box">:</div>
+        <div className="integer-box integer-time">
+          <SingleDigitBox digit={this.displayDigit(this.props.time, 'seconds', 'ones')} digits="2"></SingleDigitBox>
+          <SingleDigitBox digit={this.displayDigit(this.props.time, 'seconds', 'tens')} digits="2"></SingleDigitBox>
         </div>
-      </div>
-    </section>
+      </section>
     );
   }
 }

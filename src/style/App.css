@@ -8,11 +8,12 @@
 @import 'modules/_all';
 @import 'themes/_dark';
 
-// namespace the main components inside the scoreboard css class
-.scoreboard {
+// top level namespace
+.react-scoreboard {
   @include scoreboard('dark');
   @include label-box();
-  @include number-box();
+  @include integer-box();
+  @include colon-box();
   @include period-indicators();
   @include flex-row();
   @include columns();

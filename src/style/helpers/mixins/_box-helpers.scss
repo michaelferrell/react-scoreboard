@@ -1,5 +1,6 @@
 /*
- * Box Helper mixins
+ * Box helper mixins
+ * Smaller mixins used to build larger mixins
  */
 
 @mixin box-layout($display: null, $txt-align: null) {
@@ -26,4 +27,10 @@
 @mixin box-color($bg-color, $color: null) {
   background-color: $bg-color;
   color: $color;
+}
+
+@mixin box-shadow($shadow) {
+  -webkit-box-shadow: $shadow;
+     -moz-box-shadow: $shadow;
+          box-shadow: $shadow;
 }

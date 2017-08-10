@@ -1,0 +1,29 @@
+/*
+ * colon-box module
+ * Defines a colon-box module
+ *
+ * @return {mixin} The colon-box
+ */
+
+@import 'helpers/mixins/_font-constructor';
+
+@mixin colon-box() {
+  // styles
+  .colon-box {
+    @include font-constructor(4.8rem, 4.8rem, 400, $grey);
+    display: inline-block;
+    text-align: center;
+    vertical-align: top;
+    width: 20%;
+
+    @media($screen-md-less) {
+      @include font-constructor(3rem, 3rem);
+      width: 15%;
+    }
+
+    @media($screen-sm-less) {
+      @include font-constructor(2rem, 2rem, 400);
+      width: 17%;
+    }
+  }
+}

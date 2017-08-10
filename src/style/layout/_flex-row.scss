@@ -6,13 +6,13 @@
  * @return {mixin} The flex-row
  */
 @import 'helpers/mixins/_flex';
-@import 'helpers/mixins/_box-auxiliary';
+@import '_flex-auxiliary';
 
 @mixin flex-row() {
 	// styles
 	.flex-row {
 		@include flex();
-		@include box-auxiliary($box-model-padding);
+		@include flex-auxiliary($box-model-padding);
 	  white-space: no-wrap;
 	  -webkit-flex-wrap: wrap;
 	      -ms-flex-wrap: wrap;

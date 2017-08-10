@@ -1,7 +1,19 @@
 /*
- * Font-constructor mixin
+ * font-constructor mixin
+ * supports optional arguments using the null data type
+ * giving a variable a null value excludes it from the CSS output
+ *
+ * @param @size        {number} The value that sets the font-size of the element
+ * @param @line-height {number} The values that specifies the circles type of element
+ * @param @weight      {number} The value that adds rounded corners to an element
+ * @param @color       {color}  The value that sets the color of an element
+ * @param @family      {string} The value that sets the font-family of an element
+ * @param @style       {string} The value that sets the font-style of an element
+ * @param @transform   {string} The value that sets the text-transform type of an element
+ * @param @kerning     {number} The value that sets the letter spacing of an element
+ *
+ * @return {mixin} font-constructor
  */
-
 @mixin font-constructor(
 	$size,
 	$line-height,
@@ -18,6 +30,6 @@
 		color: $color;
 		font-family: $family;
 		font-style: $style;
-		transform: $transform;
+		text-transform: $transform;
 		letter-spacing: $kerning;
 }

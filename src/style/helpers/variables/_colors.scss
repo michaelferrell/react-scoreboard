@@ -1,0 +1,22 @@
+/*
+ * Global color palette
+ */
+
+// base colors
+$black:    #000000;
+$white:    #FFFFFF;
+$pink:     #ea4c89;
+$red:      #D10505;
+$yellow:   #F9BC32;
+$grey:     #858585;
+$charcoal: #313131;
+
+// color utilities
+$color-lighten: 7%;
+$color-darken:  7%;
+
+// color palette lightened
+$charcoal--light: lighten($charcoal, $color-lighten);
+
+// color palette darkened
+$charcoal--dark: darken($charcoal, $color-darken);

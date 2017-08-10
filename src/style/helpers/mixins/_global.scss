@@ -1,8 +1,3 @@
-@mixin inset-box-shadow($alpha) {
-  -webkit-box-shadow: inset 0px 0px 15px 0px rgba(0, 0, 0, $alpha);
-     -moz-box-shadow: inset 0px 0px 15px 0px rgba(0, 0, 0, $alpha);
-          box-shadow: inset 0px 0px 15px 0px rgba(0, 0, 0, $alpha);
-}
 @mixin center() {
 	margin-left: auto;
 	margin-right: auto;

@@ -18,8 +18,8 @@ class App extends Component {
       cur_period: 1,
       total_periods: TOTAL_PERIODS,
       game_is_live: false,
-      home_score: 2,
-      visitor_score: 10
+      home_score: 103,
+      visitor_score: 114
     };
   }
 

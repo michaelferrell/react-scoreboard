@@ -10,7 +10,6 @@
 
 @mixin period-indicators() {
 	// variables
-	$indicator-top-margin: 10px;
 	$item-size: 10px;
 	$item-display: inline-block;
 	$item-bg-color: $grey;
@@ -24,8 +23,6 @@
 
 	// styles
 	.period-indicators {
-		margin-top: $indicator-top-margin;
-
 		> .indicator-item {
 			@include circle(
 				$item-size,

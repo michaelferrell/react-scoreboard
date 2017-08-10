@@ -1,18 +1,18 @@
 /*
  * columns layout
- *
- * Defines a columns layout
+ * Defines the column grid system
  *
  * @return {mixin} The columns
  */
-@import 'helpers/mixins/_box-auxiliary';
+
+@import '_flex-auxiliary';
 
 @mixin columns() {
 	// styles
 	.col-center,
 	.col-score {
 		@include text-center();
-		@include box-auxiliary($box-model-padding);
+		@include flex-auxiliary($box-model-padding);
 	}
 	.col-center {
 		width: $half-width;

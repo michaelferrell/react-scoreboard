@@ -1,3 +1,21 @@
+/*
+ * Rectangle mixin
+ * defines a generic rectangle to be used in any component
+ * giving a variable a null value excludes it from the CSS output
+ *
+ * @param @width      {number} The value that sets the width of the element
+ * @param @height     {number} The value that sets the height of the element
+ * @param @display    {string} The value that sets the display type of a element
+ * @param @radius     {number} The value that adds rounded corners to an element
+ * @param @bg-color   {color}  The value that sets the background color of an element
+ * @param @margin     {number} The value of the amount of spacing outside of a element
+ * @param @paddding   {number} The value of the amount of padding inside of a element
+ * @param @border     {string} The value that creates a border around an element
+ * @param @$txt-align {string} The value that aligns inline elements in the specified direction
+ *
+ * @return {mixin} rectangle
+ */
+
 @mixin rectangle(
   $width,
   $height,
@@ -7,12 +25,14 @@
   $margin:    null,
   $padding:   null,
   $border:    null,
-  $txt-align: null
-) {
-  $type: 'rectangle';
-  @include box-size($type);
-  @include box-model($margin, $padding, $border);
-  @include box-color($bg-color);
-  @include rounded($radius)
-  @include box-layout($display, $txt-align);
+  $txt-align: null,
+  $shadow:    null
+  ) {
+    $type: 'rectangle';
+    @include box-size($type);
+    @include box-model($margin, $padding, $border);
+    @include box-color($bg-color);
+    @include rounded($radius)
+    @include box-layout($display, $txt-align);
+    @include box-shadow($shadow);
 }

@@ -1,0 +1,103 @@
+/*
+ * number-box module
+ * Defines a number-box module
+ *
+ * @return {mixin} The number-box
+ */
+
+@import 'helpers/mixins/_font-constructor';
+@import 'helpers/mixins/_inset-box-shadow';
+@import 'helpers/mixins/_rectangle';
+
+@mixin integer-box() {
+  // variables
+  $integer-box-display: inline-block;
+  $integer-box-radius: $default-rounded;
+  $integer-box-bg-color: $charcoal;
+  $integer-box-margin: 0 0 10px 0;
+  $integer-box-padding: 3px;
+  $integer-box-border: 1px solid $charcoal--light;
+  $integer-box-txt-align: center;
+
+  // styles
+  .integer-box {
+    @include rectangle(
+      null,
+      null,
+      $integer-box-display,
+      $integer-box-radius,
+      $integer-box-bg-color,
+      $integer-box-margin,
+      $integer-box-padding,
+      $integer-box-border,
+      $integer-box-txt-align
+    );
+    @include inset-box-shadow(15px, .7);
+    &.integer-time {
+      width: 40%;
+    }
+    &.integer-score {
+      width: 100%;
+    }
+    .single-digit-box {
+      display: block;
+      float: left;
+      position: relative;
+    }
+    &.integer-time .single-digit-box {
+      height: 77px;
+    }
+    &.integer-score .single-digit-box {
+      height: 61px;
+    }
+    .single-digit-box.box-half {
+      width: $half-width;
+    }
+    .single-digit-box.box-third {
+      width: $third-width;
+    }
+    .digit-positioning {
+      position: absolute;
+      left: auto;
+      top: 0;
+      text-align: right;
+      width: 90%;
+      padding-right: 5%;
+    }
+    .digit-positioning.digit-live {
+      z-index: 20;
+    }
+    .digit-positioning.digit-silhouette {
+      opacity: .1;
+      z-index: 10;
+    }
+    &.integer-time .digit-text {
+      @include font-constructor(5rem, 5rem, 400, $yellow, $digital-7);
+    }
+    &.integer-score .digit-text {
+      @include font-constructor(4rem, 4rem, 400, $red, $digital-7);
+    }
+
+    @media($screen-md-less) {
+      &.integer-time .single-digit-box,
+      &.integer-score .single-digit-box {
+        height: 52px;
+      }
+      &.integer-time .digit-text,
+      &.integer-score .digit-text {
+        @include font-constructor(3.2rem, 3.2rem);
+      }
+    }
+
+    @media($screen-sm-less) {
+      &.integer-time .single-digit-box,
+      &.integer-score .single-digit-box {
+        height: 29px;
+      }
+      &.integer-time .digit-text,
+      &.integer-score .digit-text {
+        @include font-constructor(1.8rem, 1.8rem, 400);
+      }
+    }
+  }
+}

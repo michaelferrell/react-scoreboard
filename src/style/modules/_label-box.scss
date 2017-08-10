@@ -12,8 +12,8 @@
 @mixin label-box() {
   // variables
   $label-box-bg-color: rgba(0, 0, 0, 0.4);
-  $label-box-margin: 0;
-  $label-box-padding: 2px;
+  $label-box-margin: 0 0 8px 0;
+  $label-box-padding: 4px 0;
   $label-box-border: 0;
   // screen-md-less
   $label-box-padding--md: 4px 0;
@@ -25,7 +25,7 @@
     @include rounded($default-rounded);
 
     > .label-text {
-      @include font-constructor(1.7rem, 1.7rem, 300, $grey);
+      @include font-constructor(1.4rem, 1.4rem, 300, $grey, inherit, null, uppercase);
     }
     &.period-label {
       @include center();

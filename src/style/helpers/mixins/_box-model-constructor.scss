@@ -1,12 +1,12 @@
 /*
  * box-model-constructor mixin
  * supports optional arguments using the null data type
- * giving a variable a null excludes it from the CSS output
+ * giving a variable a null value excludes it from the CSS output
  *
  * Defines a box-model-constructor mixin
  * @param @width      {number} The value that sets the width of the element
  * @param @size       {number} The value that sets the height of the element
- * @param @display    {string} The values that specifies the circles type of element
+ * @param @display    {string} The value that sets the display type of a element
  * @param @radius     {number} The value that adds rounded corners to an element
  * @param @margin     {number} The value of the amount of spacing outside of a element
  * @param @paddding   {number} The value of the amount of padding inside of a element
@@ -14,7 +14,7 @@
  * @param @border     {string} The value that creates a border around an element
  * @param @$txt-align {string} The value that aligns inline elements in the specified direction
  *
- * @return {mixin} The box-model-constructor
+ * @return {mixin} box-model-constructor
  */
 
 @mixin box-model-constructor(

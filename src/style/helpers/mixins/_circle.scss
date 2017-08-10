@@ -1,5 +1,17 @@
 /*
  * circle mixin
+ * defines a generic circle to be used in any component
+ * giving a variable a null value excludes it from the CSS output
+ *
+ * @param @size       {number} The value that sets the width and height of the element
+ * @param @display    {string} The value that sets the display type of a element
+ * @param @bg-color   {color}  The value that sets the background color of an element
+ * @param @margin     {number} The value of the amount of spacing outside of a element
+ * @param @paddding   {number} The value of the amount of padding inside of a element
+ * @param @border     {string} The value that creates a border around an element
+ * @param @$txt-align {string} The value that aligns inline elements in the specified direction
+ *
+ * @return {mixin} circle
  */
 
 @mixin circle(

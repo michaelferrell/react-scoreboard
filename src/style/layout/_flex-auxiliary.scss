@@ -1,0 +1,12 @@
+/*
+ * flex-auxiliary layout
+ * Common styles used for flex elements
+ *
+ * @return {mixin} flex-auxiliary
+ */
+@mixin flex-auxiliary($padding: null) {
+  box-sizing: border-box;
+  position: relative;
+  min-height: 1px;
+  padding: $padding;
+}
