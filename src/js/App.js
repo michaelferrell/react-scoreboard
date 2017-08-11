@@ -81,14 +81,19 @@ class App extends Component {
   }
 
   render() {
+    const { time, home_score, visitor_score, cur_period, total_periods } = this.state;
     return (
       <div>
         <Scoreboard
-          time={this.state.time}
-          home_score={this.state.home_score}
-          visitor_score={this.state.visitor_score}
-          cur_period={this.state.cur_period}
-          periods={this.state.total_periods}>
+          // theme="shit"
+          // theme="whale"
+          // theme="dragon"
+          theme="unicorn"
+          time={time}
+          home_score={home_score}
+          visitor_score={visitor_score}
+          cur_period={cur_period}
+          periods={total_periods}>
         </Scoreboard>
         <div className="scoreboard-control-panel">
           <button className="btn-demo" onClick={this.addHomeScore}>

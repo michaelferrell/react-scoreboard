@@ -34,3 +34,8 @@
      -moz-box-shadow: $shadow;
           box-shadow: $shadow;
 }
+
+@mixin box-inner-border($size, $color, $offset) {
+  outline: $size solid $color;
+  outline-offset: $offset;
+}

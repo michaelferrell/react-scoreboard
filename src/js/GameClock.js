@@ -27,16 +27,17 @@ class GameClock extends Component {
   }
 
   render() {
+    let { theme, time } = this.props;
     return (
       <section>
-        <div className="integer-box integer-time">
-          <SingleDigitBox digit={this.displayDigit(this.props.time, 'minutes', 'ones')} digits="2"></SingleDigitBox>
-          <SingleDigitBox digit={this.displayDigit(this.props.time, 'minutes', 'tens')} digits="2"></SingleDigitBox>
+        <div className={"integer-box integer-time " + theme}>
+          <SingleDigitBox digit={this.displayDigit(time, 'minutes', 'ones')} digits="2"></SingleDigitBox>
+          <SingleDigitBox digit={this.displayDigit(time, 'minutes', 'tens')} digits="2"></SingleDigitBox>
         </div>
         <div className="colon-box">:</div>
-        <div className="integer-box integer-time">
-          <SingleDigitBox digit={this.displayDigit(this.props.time, 'seconds', 'ones')} digits="2"></SingleDigitBox>
-          <SingleDigitBox digit={this.displayDigit(this.props.time, 'seconds', 'tens')} digits="2"></SingleDigitBox>
+        <div className={"integer-box integer-time " + theme}>
+          <SingleDigitBox digit={this.displayDigit(time, 'seconds', 'ones')} digits="2"></SingleDigitBox>
+          <SingleDigitBox digit={this.displayDigit(time, 'seconds', 'tens')} digits="2"></SingleDigitBox>
         </div>
       </section>
     );

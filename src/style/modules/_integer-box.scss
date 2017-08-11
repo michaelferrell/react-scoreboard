@@ -8,6 +8,7 @@
 @import 'helpers/mixins/_font-constructor';
 @import 'helpers/mixins/_inset-box-shadow';
 @import 'helpers/mixins/_rectangle';
+@import 'helpers/mixins/_set-theme';
 
 @mixin integer-box() {
   // variables
@@ -18,9 +19,14 @@
   $integer-box-padding: 3px;
   $integer-box-border: 1px solid $charcoal--light;
   $integer-box-txt-align: center;
+  $time-txt-color: $yellow;
+  $score-txt-color: $red;
+  $silhouette-opacity: .1;
 
   // styles
   .integer-box {
+    // render theme
+    @include render-component-theme('integer-box');
     @include rectangle(
       null,
       null,
@@ -68,14 +74,14 @@
       z-index: 20;
     }
     .digit-positioning.digit-silhouette {
-      opacity: .1;
+      opacity: $silhouette-opacity;
       z-index: 10;
     }
     &.integer-time .digit-text {
-      @include font-constructor(5rem, 5rem, 400, $yellow, $digital-7);
+      @include font-constructor(5rem, 5rem, 400, $time-txt-color, $digital-7);
     }
     &.integer-score .digit-text {
-      @include font-constructor(4rem, 4rem, 400, $red, $digital-7);
+      @include font-constructor(4rem, 4rem, 400, $score-txt-color, $digital-7);
     }
 
     @media($screen-md-less) {

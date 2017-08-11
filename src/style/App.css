@@ -10,10 +10,11 @@
 
 // top level namespace
 .react-scoreboard {
-  @include scoreboard('dark');
-  @include label-box();
+  @include scoreboard();
   @include integer-box();
+  @include label-box();
   @include colon-box();
+  @include winning-indicator();
   @include period-indicators();
   @include flex-row();
   @include columns();

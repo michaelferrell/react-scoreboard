@@ -1,0 +1,148 @@
+/*
+ * render-scoreboard-theme
+ *
+ * @return {mixin} theme
+ */
+
+@mixin render-scoreboard-theme() {
+	$scoreboard-themes: (
+		'dragon': (
+			'background-color': firebrick,
+			'outline-color': darken(firebrick, 10%)
+		),
+		'whale': (
+			'background-color': #0074D9,
+			'outline-color': #fff
+		),
+		'unicorn': (
+			'background-color': #ec5590,
+			'outline-color': #fff
+		)
+	);
+
+	@each $theme, $styles in $scoreboard-themes {
+		&.theme--#{$theme} {
+  		background-color: map-get($styles, 'background-color');
+  		outline-color: map-get($styles, 'outline-color');
+		}
+	}
+}
+
+/*
+ * render-label-box-theme
+ *
+ * @return {mixin} theme
+ */
+
+@mixin render-label-box-theme() {
+	$label-box-themes: (
+		'dragon': (
+			'background-color': firebrick,
+			'color': #fff
+		),
+		'whale': (
+			'background-color': #0074D9,
+			'color': #fff,
+		),
+		'unicorn': (
+			'background-color': #ec5590,
+			'color': #fff,
+			'font-weight': 400,
+		)
+	);
+
+	@each $theme, $styles in $label-box-themes {
+		&.theme--#{$theme} {
+  		background-color: map-get($styles, 'background-color');
+  		> .label-text {
+  			color: map-get($styles, 'color');
+  			font-weight: map-get($styles, 'font-weight');
+  		}
+		}
+	}
+}
+
+/*
+ * render-integer-box-theme
+ *
+ * @return {mixin} theme
+ */
+
+@mixin render-integer-box-theme() {
+	$integer-box-themes: (
+		'dragon': (
+			'background-color': firebrick,
+			'color': #fff,
+		),
+		'whale': (
+			'background-color': #0074D9,
+		),
+		'unicorn': (
+			'background-color': #272727,
+			'color': #ec4b8a,
+		)
+	);
+
+	@each $theme, $styles in $integer-box-themes {
+		&.theme--#{$theme} {
+  		background-color: map-get($styles, 'background-color');
+	    &.integer-time .digit-text,
+	    &.integer-score .digit-text {
+  			color: map-get($styles, 'color');
+	    }
+		}
+	}
+}
+
+/*
+ * render-period-indicators-theme
+ *
+ * @return {mixin} theme
+ */
+
+@mixin render-period-indicators-theme() {
+	$period-indicators-themes: (
+		'dragon': (
+			'background-color': #fff,
+		),
+		'whale': (
+			'background-color': #fff,
+		),
+		'unicorn': (
+			// 'background-color': #fff,
+			'background-color': rgba(0, 0, 0, 0.4),
+			'background-color--active': $yellow
+		)
+	);
+
+	@each $theme, $styles in $period-indicators-themes {
+		&.theme--#{$theme} {
+			> .indicator-item {
+  			background-color: map-get($styles, 'background-color');
+				&[data-active="true"] {
+					background-color: map-get($styles, 'background-color--active');
+				}
+			}
+		}
+	}
+}
+
+/*
+ * render-component-theme
+ *
+ * @param @component {string} The component to apply the theme to
+ *
+ * @return {mixin} theme
+ */
+
+@mixin render-component-theme($component) {
+  @if $component == 'scoreboard' {
+  	@include render-scoreboard-theme();
+	} @else if $component == 'label-box' {
+  	@include render-label-box-theme();
+	} @else if $component == 'integer-box' {
+		@include render-integer-box-theme();
+	} @else if $component == 'period-indicators' {
+		@include render-period-indicators-theme();
+	}
+}

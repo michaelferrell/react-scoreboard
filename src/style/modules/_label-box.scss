@@ -8,24 +8,40 @@
 
 @import 'helpers/mixins/_box-helpers';
 @import 'helpers/mixins/_font-constructor';
+@import 'helpers/mixins/_rectangle';
+@import 'helpers/mixins/_set-theme';
 
 @mixin label-box() {
   // variables
   $label-box-bg-color: rgba(0, 0, 0, 0.4);
-  $label-box-margin: 0 0 8px 0;
+  $label-box-margin: 0 0 5px 0;
   $label-box-padding: 4px 0;
   $label-box-border: 0;
+  $label-box-text-align: center;
+  $label-text-color: $grey;
+  $label-text-weight: 300;
   // screen-md-less
   $label-box-padding--md: 4px 0;
 
   // styles
   .label-box {
-    @include box-model($label-box-margin, $label-box-padding, $label-box-border);
-    @include box-color($label-box-bg-color);
-    @include rounded($default-rounded);
+    // render theme
+    @include render-component-theme('label-box');
+
+    @include rectangle(
+      null,
+      null,
+      null,
+      $default-rounded,
+      $label-box-bg-color,
+      $label-box-margin,
+      $label-box-padding,
+      $label-box-border,
+      $label-box-text-align
+    )
 
     > .label-text {
-      @include font-constructor(1.4rem, 1.4rem, 300, $grey, inherit, null, uppercase);
+      @include font-constructor(1.4rem, 1.4rem, $label-text-weight, $label-text-color, inherit, null, uppercase);
     }
     &.period-label {
       @include center();
@@ -36,7 +52,7 @@
       padding: $label-box-padding--md;
 
       > .label-text {
-        @include font-constructor(1.1rem, 1.1rem, 400);
+        @include font-constructor(1.1rem, 1.1rem);
       }
     }
 

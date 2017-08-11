@@ -8,9 +8,12 @@
 @import 'helpers/mixins/_font-constructor';
 
 @mixin colon-box() {
+  // variables
+  $colon-color: $grey;
+
   // styles
   .colon-box {
-    @include font-constructor(4.8rem, 4.8rem, 400, $grey);
+    @include font-constructor(4.8rem, 4.8rem, 400, $colon-color);
     display: inline-block;
     text-align: center;
     vertical-align: top;

@@ -12,7 +12,7 @@ class PeriodIndicators extends Component {
       <PeriodIndicatorItem key={item} item={item} cur_period={this.props.cur_period} active={this.setActiveState(item)}></PeriodIndicatorItem>
     );
     return (
-      <ul className="period-indicators">
+      <ul className={"period-indicators " + this.props.theme}>
         {items}
       </ul>
     )

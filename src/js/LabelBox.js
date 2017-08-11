@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 
-class TextLabel extends Component {
+class LabelBox extends Component {
 	render() {
-		const class_names = this.props.type === 'period' ? 'label-box period-label' : 'label-box';
+		let { theme, type, label } = this.props;
+		const class_names = type === 'period' ? ('label-box period-label ' + theme) : ('label-box ' + theme);
 		return (
-			<div className={class_names}><span class="label-text">{this.props.label}</span></div>
+			<div className={class_names}><span class="label-text">{label}</span></div>
 		)
 	}
 }
 
-export default TextLabel;
+export default LabelBox;

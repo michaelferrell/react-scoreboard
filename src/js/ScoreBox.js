@@ -39,13 +39,12 @@ class ScoreBox extends Component {
    }
 
 	render() {
+		let { theme, score } = this.props;
 		return (
-			<section>
-				<div className="integer-box integer-score">
-					<SingleDigitBox digit={this.displayDigit(this.props.score, 'hundreds')} digits="3"></SingleDigitBox>
-					<SingleDigitBox digit={this.displayDigit(this.props.score, 'tens')} digits="3"></SingleDigitBox>
-					<SingleDigitBox digit={this.displayDigit(this.props.score, 'ones')} digits="3"></SingleDigitBox>
-				</div>
+			<section className={"integer-box integer-score " + theme}>
+				<SingleDigitBox digit={this.displayDigit(score, 'hundreds')} digits="3"></SingleDigitBox>
+				<SingleDigitBox digit={this.displayDigit(score, 'tens')} digits="3"></SingleDigitBox>
+				<SingleDigitBox digit={this.displayDigit(score, 'ones')} digits="3"></SingleDigitBox>
 			</section>
 		)
 	}

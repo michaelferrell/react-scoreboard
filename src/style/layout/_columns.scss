@@ -9,21 +9,16 @@
 
 @mixin columns() {
 	// styles
-	.col-center,
-	.col-score {
-		@include text-center();
+	.col-full {
+		width: $full-width;
 		@include flex-auxiliary($box-model-padding);
 	}
-	.col-center {
-		width: $half-width;
-	}
 	.col-score {
-		width: $quarter-width;
+		width: 38%;
+		@include flex-auxiliary($box-model-padding);
 	}
-	@media ($screen-md-less) {
-		.col-score {
-			@include no-pad();
-		}
+	.col-period {
+		width: 24%;
 	}
 }
 

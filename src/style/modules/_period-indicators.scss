@@ -7,22 +7,26 @@
  */
 
 @import 'helpers/mixins/_circle';
+@import 'helpers/mixins/_set-theme';
 
 @mixin period-indicators() {
 	// variables
-	$item-size: 10px;
+	$item-size: 9px;
 	$item-display: inline-block;
 	$item-bg-color: $grey;
-	$item-margin: 0 10px;
+	$item-margin: 0 5px;
 	$item-padding: 0;
 	$item-active-color: $yellow;
 	// screen-md-less
 	$item-size--md: 7px;
 	$item-margin--md: 0 5px;
-	$indicator-top-margin--m: 5;
 
 	// styles
 	.period-indicators {
+    // render theme
+    @include render-component-theme('period-indicators');
+		@include text-center();
+
 		> .indicator-item {
 			@include circle(
 				$item-size,
@@ -37,8 +41,6 @@
 		}
 
 		@media($screen-md-less) {
-			margin-top: $indicator-top-margin--m;
-
 			> .indicator-item {
 				@include circle(
 					$item-size--md,

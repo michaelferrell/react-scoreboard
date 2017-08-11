@@ -1,0 +1,18 @@
+/*
+ * map-set function
+ * usage:
+ * $c_palette: ('grey': #222);
+ * $c_palette: map-set($c_palette, 'grey', #999);
+ *
+ * Defines a box-model-constructor mixin
+ * @param @map   {map}    The map to be updated
+ * @param @key   {string} The target key to be updated in the map
+ * @param @value {string} The new value to be updated on the specified key
+ *
+ * @return {map} map-merge The new map
+ */
+
+@function map-set($map, $key, $value) {
+  $new: ($key: $value);
+  @return map-merge($map, $new);
+}
