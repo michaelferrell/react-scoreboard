@@ -42,8 +42,8 @@
 			border-style: solid;
 		}
 
-		&[data-winning-team="away"] {
-		}
+		// &[data-winning-team="away"] {
+		// }
 
 		.triangle-left {
 			@include triangle('left', $tri-size--left, $tri-color--left, $tri-margin);
