@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import SingleDigitBox from './SingleDigitBox';
-import Helpers from './Helpers';
+import CommonMethods from '../helpers/CommonMethods';
 
 class ScoreBox extends Component {
 	displayDigitX = (number, place_val) => {
 	let arr = ('' + number).split('');
-	let index = Helpers.placeValueLookup(place_val);
+	let index = CommonMethods.placeValueLookup(place_val);
 	return arr[index];
 	}
 

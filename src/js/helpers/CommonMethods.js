@@ -1,4 +1,4 @@
-const Helpers = {
+const CommonMethods = {
   placeValueLookup: function(val) {
 		const options = {
 			'ones': 0,
@@ -7,7 +7,6 @@ const Helpers = {
 		}
 		return options[val];
   }
-
 }
 
-export default Helpers;
+export default CommonMethods;

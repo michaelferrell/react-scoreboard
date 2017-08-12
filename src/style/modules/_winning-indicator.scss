@@ -6,11 +6,12 @@
  */
 
 @import 'helpers/mixins/_rectangle';
+@import 'helpers/mixins/_triangle';
 @import 'helpers/mixins/_set-theme';
 
 @mixin winning-indicator() {
   // variables
-  $wi-margin: 39px 0 10px 0;
+  $wi-margin: 21px 0 10px 0;
   $tri-size--left: 18px 18px 18px 0;
   $tri-size--right: 18px 0 18px 18px;
   $tri-color: #007bff;
@@ -18,10 +19,14 @@
   $tri-color--active: $yellow;
   $tri-color--left: rgba(0, 0, 0, 0.4);
   $tri-color--right: $yellow;
-
-  $wi-margin--md: 35px 0 4px 0;
+  // screen-md-less
+  $wi-margin--md: 25px 0 4px 0;
   $tri-size--left--md: 13px 13px 13px 0;
   $tri-size--right--md: 13px 0 13px 13px;
+  // screen-sm-less
+  $wi-margin--sm: 15px 0 4px 0;
+  $tri-size--left--sm: 11px 11px 11px 0;
+  $tri-size--right--sm: 11px 0 11px 11px;
 
 	// styles
 	.winning-indicator {
@@ -38,22 +43,6 @@
 		}
 
 		&[data-winning-team="away"] {
-		}
-
-		@mixin triangle($direction, $tri-size, $color, $margin) {
-			@if $direction == 'left' {
-				@include triangle-size($tri-size);
-				border-color: transparent $color transparent transparent;
-				margin-right: $margin;
-			} @else if $direction == 'right' {
-				@include triangle-size($tri-size);
-				border-color: transparent transparent transparent $color;
-				margin-left: $margin;
-			}
-		}
-
-		@mixin triangle-size($tri-size) {
-			border-width: $tri-size;
 		}
 
 		.triangle-left {
@@ -73,6 +62,13 @@
 			}
 	  }
 	  @media($screen-sm-less) {
+	  	margin: $wi-margin--sm;
+			.triangle-left {
+				@include triangle-size($tri-size--left--sm);
+			}
+			.triangle-right {
+				@include triangle-size($tri-size--right--sm);
+			}
 	  }
 	}
 }

@@ -17,6 +17,10 @@
 		'unicorn': (
 			'background-color': #ec5590,
 			'outline-color': #fff
+		),
+		'unicorn-dark': (
+			'background-color': #404043,
+			'outline-color': #fff
 		)
 	);
 
@@ -46,6 +50,11 @@
 		),
 		'unicorn': (
 			'background-color': #ec5590,
+			'color': #fff,
+			'font-weight': 400,
+		),
+		'unicorn-dark': (
+			'background-color': #ea3773,
 			'color': #fff,
 			'font-weight': 400,
 		)
@@ -80,6 +89,10 @@
 		'unicorn': (
 			'background-color': #272727,
 			'color': #ec4b8a,
+		),
+		'unicorn-dark': (
+			'background-color': #272727,
+			'color': #ea3773,
 		)
 	);
 
@@ -90,6 +103,35 @@
 	    &.integer-score .digit-text {
   			color: map-get($styles, 'color');
 	    }
+		}
+	}
+}
+
+/*
+ * render-colon-theme
+ *
+ * @return {mixin} theme
+ */
+
+@mixin render-colon-box-theme() {
+	$colon-box-themes: (
+		'dragon': (
+			'color': #fff
+		),
+		'whale': (
+			'color': #fff,
+		),
+		'unicorn': (
+			'color': #fff,
+		),
+		'unicorn-dark': (
+			'color': #ea3773,
+		)
+	);
+
+	@each $theme, $styles in $colon-box-themes {
+		&.theme--#{$theme} {
+  		color: map-get($styles, 'color');
 		}
 	}
 }
@@ -109,9 +151,12 @@
 			'background-color': #fff,
 		),
 		'unicorn': (
-			// 'background-color': #fff,
 			'background-color': rgba(0, 0, 0, 0.4),
 			'background-color--active': $yellow
+		),
+		'unicorn-dark': (
+			'background-color': rgba(0, 0, 0, 0.4),
+			'background-color--active': #ea3773
 		)
 	);
 
@@ -144,5 +189,7 @@
 		@include render-integer-box-theme();
 	} @else if $component == 'period-indicators' {
 		@include render-period-indicators-theme();
+	} @else if $component == 'colon-box' {
+		@include render-colon-box-theme();
 	}
 }

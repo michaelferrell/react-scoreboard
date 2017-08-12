@@ -3,13 +3,11 @@
  */
 
 const themes = {
-	'dark':    'theme--dark',
-	'pink':    'theme--pink',
-	'green':   'theme--green',
-	'blue':    'theme--blue',
+	'dark': 'theme--dark',
 	'unicorn': 'theme--unicorn',
-	'dragon':  'theme--dragon',
-	'whale':   'theme--whale',
+	'unicorn-dark': 'theme--unicorn-dark',
+	'dragon': 'theme--dragon',
+	'whale': 'theme--whale'
 }
 
 export default themes;

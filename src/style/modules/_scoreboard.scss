@@ -27,8 +27,8 @@
   $sb-max-width--md: 400px;
   $sb-padding--md: 30px 20px;
   // screen-sm-less
-  $sb-max-width--sm: 320px;
-  $sb-padding--sm: 30px 0px;
+  $sb-max-width--sm: 300px;
+  $sb-padding--sm: 30px 10px;
 
   // styles
   @include rectangle($full-width, null, $sb-display, $sb-radius, $sb-bg, null, $sb-padding, null);

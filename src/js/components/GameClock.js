@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import SingleDigitBox from './SingleDigitBox';
-import Helpers from './Helpers';
+import CommonMethods from '../helpers/CommonMethods';
 
 class GameClock extends Component {
   displayMinutes = (time) => {
@@ -22,7 +22,7 @@ class GameClock extends Component {
     for (var i = 0; i < number.length; i++) {
       arr.push(number.charAt(i))
     }
-    let index = Helpers.placeValueLookup(place_val);
+    let index = CommonMethods.placeValueLookup(place_val);
     return arr[index];
   }
 
@@ -34,7 +34,7 @@ class GameClock extends Component {
           <SingleDigitBox digit={this.displayDigit(time, 'minutes', 'ones')} digits="2"></SingleDigitBox>
           <SingleDigitBox digit={this.displayDigit(time, 'minutes', 'tens')} digits="2"></SingleDigitBox>
         </div>
-        <div className="colon-box">:</div>
+        <div className={"colon-box " + theme}>:</div>
         <div className={"integer-box integer-time " + theme}>
           <SingleDigitBox digit={this.displayDigit(time, 'seconds', 'ones')} digits="2"></SingleDigitBox>
           <SingleDigitBox digit={this.displayDigit(time, 'seconds', 'tens')} digits="2"></SingleDigitBox>

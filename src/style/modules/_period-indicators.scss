@@ -20,6 +20,9 @@
 	// screen-md-less
 	$item-size--md: 7px;
 	$item-margin--md: 0 5px;
+	// screen-sm-less
+	$item-size--sm: 6px;
+	$item-margin--sm: 0 3px;
 
 	// styles
 	.period-indicators {
@@ -47,6 +50,17 @@
 					null,
 					null,
 					$item-margin--md
+				);
+			}
+		}
+
+		@media($screen-sm-less) {
+			> .indicator-item {
+				@include circle(
+					$item-size--sm,
+					null,
+					null,
+					$item-margin--sm
 				);
 			}
 		}

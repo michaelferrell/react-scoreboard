@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import GameClock from './GameClock';
+import GameClock from './components/GameClock';
 import Themes from './helpers/themes';
-import LabelBox from './LabelBox';
-import ScoreBox from './ScoreBox';
-import WinningIndicator from './WinningIndicator';
-import PeriodIndicators from './PeriodIndicators';
+import LabelBox from './components/LabelBox';
+import ScoreBox from './components/ScoreBox';
+import WinningIndicator from './components/WinningIndicator';
+import PeriodIndicators from './components/PeriodIndicators';
 
 class Scoreboard extends Component {
   render() {

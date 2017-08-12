@@ -85,10 +85,10 @@ class App extends Component {
     return (
       <div>
         <Scoreboard
-          // theme="shit"
           // theme="whale"
           // theme="dragon"
-          theme="unicorn"
+          // theme="unicorn"
+          // theme="unicorn-dark"
           time={time}
           home_score={home_score}
           visitor_score={visitor_score}
