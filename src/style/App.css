@@ -14,7 +14,8 @@
   @include integer-box();
   @include label-box();
   @include colon-box();
-  @include winning-indicator();
+  @include team-logo();
+  @include possession-indicators();
   @include period-indicators();
   @include flex-row();
   @include columns();

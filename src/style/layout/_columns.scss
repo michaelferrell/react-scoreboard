@@ -13,12 +13,29 @@
 		width: $full-width;
 		@include flex-auxiliary($box-model-padding);
 	}
+	.col-main {
+		width: 70%;
+		@include center();
+		// background-color: #111;
+	}
+	.col-clock {
+		width: 100%;
+	}
 	.col-score {
-		width: 38%;
-		@include flex-auxiliary($box-model-padding);
+		width: 50%;
+	}
+	.col-score.col-home {
+		padding-right: 15px;
+	}
+	.col-scores.col-away {
+		padding-left: 15px;
 	}
 	.col-period {
-		width: 24%;
+		width: 50%;
+		@include center();
+	}
+	.col-logo {
+		width: 15%;
 	}
 }
 

@@ -63,9 +63,10 @@ const config = {
   module: {
     rules: [
       {
+        // images and font faces
         // http://www.fontriver.com/font/dot_matrix/download.html
         // https://transfonter.org/
-        test: /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9=&.]+)?$/,
+        test: /\.(ttf|png|jpe?g|eot|svg|woff(2)?)(\?[a-z0-9=&.]+)?$/,
         use: [
           {
             loader: 'file-loader'

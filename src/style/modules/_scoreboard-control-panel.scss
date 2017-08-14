@@ -16,8 +16,8 @@
 	}
 	.btn-demo {
 	  @include rounded($default-rounded);
-    @include box-color(rgba(255, 255, 255, .2));
-	  @include box-model(50px 10px, 3px 10px, 1px solid rgba(255,255,255,.1))
-		@include font-constructor(1.1rem, 1.1rem, 300, $grey)
+    @include box-color($mine);
+	  @include box-model(20px 10px 0 10px, 3px 5px, 1px solid rgba(255,255,255,.1))
+		@include font-constructor(1.1rem, 1.1rem, 300, $white)
 	}
 }

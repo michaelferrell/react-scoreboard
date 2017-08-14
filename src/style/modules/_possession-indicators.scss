@@ -1,0 +1,83 @@
+/*
+ * possession-indicators module
+ * A indicator component that displays which team receives the ball after a heldball, when the ball gets stuck between the rim, or double foul
+ *
+ * @return {mixin} possession-indicators
+ */
+
+@import 'helpers/mixins/_rectangle';
+@import 'helpers/mixins/_triangle';
+@import 'helpers/mixins/_set-theme';
+
+@mixin possession-indicators() {
+  // variables
+  $pi-margin: 27px 0 10px 0;
+  $tri-size--left: 13px 17px 13px 0;
+  $tri-size--right: 13px 0 13px 17px;
+  $tri-margin--left: 0 5px 0 0;
+  $tri-margin--right: 0 0 0 5px;
+  $tri-color: rgba(0, 0, 0, 0.4);
+  $tri-color--active: $yellow;
+  // screen-md-less
+  $pi-margin--md: 25px 0 4px 0;
+  $tri-size--left--md: 12px 15px 12px 0;
+  $tri-size--right--md: 12px 0 12px 15px;
+  // screen-sm-less
+  $pi-margin--sm: 15px 0 4px 0;
+  $tri-size--left--sm: 10px 13px 10px 0;
+  $tri-size--right--sm: 10px 0 10px 13px;
+
+	// styles
+	.possession-indicators {
+    // render theme
+    @include render-component-theme('possession-indicators');
+
+		width: $full-width;
+		margin: $pi-margin;
+		text-align: center;
+		@include center();
+
+		.triangle {
+			display: inline-block;
+			width: 0;
+			height: 0;
+			border-style: solid;
+		}
+
+		.triangle-left {
+			@include triangle('left', $tri-size--left, $tri-color, $tri-margin--left);
+		}
+		.triangle-right {
+			@include triangle('right', $tri-size--right, $tri-color, $tri-margin--right);
+		}
+		&[data-team-possession="away"] {
+			.triangle-right {
+				@include triangle-color('right', $tri-color--active);
+			}
+		}
+		&[data-team-possession="home"] {
+			.triangle-left {
+				@include triangle-color('left', $tri-color--active);
+			}
+		}
+
+	  @media($screen-md-less) {
+	  	margin: $pi-margin--md;
+			.triangle-left {
+				@include triangle-size($tri-size--left--md);
+			}
+			.triangle-right {
+				@include triangle-size($tri-size--right--md);
+			}
+	  }
+	  @media($screen-sm-less) {
+	  	margin: $pi-margin--sm;
+			.triangle-left {
+				@include triangle-size($tri-size--left--sm);
+			}
+			.triangle-right {
+				@include triangle-size($tri-size--right--sm);
+			}
+	  }
+	}
+}

@@ -3,6 +3,8 @@ import Scoreboard from './Scoreboard';
 import Digital7 from './../fonts/font-digital-7.css';
 import DotMatrix from './../fonts/dotmatrix.css';
 import './../style/App.css';
+import HomeLogo from './../images/golden-state-warriors-logo.png'
+import AwayLogo from './../images/cleveland-cavaliers-logo.png'
 
 const QUARTER_LENGTH = 720;
 // const QUARTER_LENGTH = 3
@@ -18,8 +20,9 @@ class App extends Component {
       cur_period: 1,
       total_periods: TOTAL_PERIODS,
       game_is_live: false,
-      home_score: 103,
-      visitor_score: 114
+      home_score: 23,
+      away_score: 19,
+      team_possession: 'away',
     };
   }
 
@@ -77,24 +80,20 @@ class App extends Component {
   }
 
   addAwayScore = () => {
-    this.setState({'visitor_score': this.state.visitor_score + ADD_AMOUNT})
+    this.setState({'away_score': this.state.away_score + ADD_AMOUNT})
   }
 
   render() {
-    const { time, home_score, visitor_score, cur_period, total_periods } = this.state;
+    let {
+      time,
+      home_score,
+      away_score,
+      cur_period,
+      total_periods,
+      team_possession
+    } = this.state;
     return (
       <div>
-        <Scoreboard
-          // theme="whale"
-          // theme="dragon"
-          // theme="unicorn"
-          // theme="unicorn-dark"
-          time={time}
-          home_score={home_score}
-          visitor_score={visitor_score}
-          cur_period={cur_period}
-          periods={total_periods}>
-        </Scoreboard>
         <div className="scoreboard-control-panel">
           <button className="btn-demo" onClick={this.addHomeScore}>
            +2 Home
@@ -103,6 +102,35 @@ class App extends Component {
            +2 Away
           </button>
         </div>
+        <Scoreboard
+          // theme="whale"
+          // theme="dragon"
+          // theme="unicorn"
+          // theme="unicorn-dark"
+          // theme="ice"
+          time={time}
+          home_score={home_score}
+          home_label="Warriors"
+          home_logo={HomeLogo}
+          away_score={away_score}
+          away_label="Cavaliers"
+          away_logo={AwayLogo}
+          cur_period={cur_period}
+          // team_possession={team_possession}
+          period_label="Period"
+          total_periods={total_periods}>
+        </Scoreboard>
+        <Scoreboard
+          time={time}
+          home_score={home_score}
+          home_label="Home"
+          away_score={away_score}
+          away_label="Visitor"
+          cur_period={cur_period}
+          // team_possession={team_possession}
+          period_label="Half"
+          total_periods={total_periods}>
+        </Scoreboard>
       </div>
     );
   }

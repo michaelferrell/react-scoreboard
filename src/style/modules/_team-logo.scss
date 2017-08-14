@@ -1,0 +1,17 @@
+/*
+ * team-logo module
+ * Defines a team-logo image module
+ *
+ * @return {mixin} team-logo
+ */
+
+@mixin team-logo() {
+	.team-logo {
+		@include text-center();
+		// display: none;
+		[data-team="home"] {}
+		[data-team="away"] {}
+    @media($screen-md-less) {}
+    @media($screen-sm-less) {}
+	}
+}

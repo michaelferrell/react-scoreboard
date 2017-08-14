@@ -3,20 +3,34 @@
  */
 
 // base colors
-$black:    #000000;
-$white:    #FFFFFF;
-$pink:     #ea4c89;
-$red:      #D10505;
-$yellow:   #F9BC32;
-$grey:     #858585;
-$charcoal: #313131;
+$black:       #000000;
+$white:       #FFFFFF;
+$mine:        #272727;
+$pink:        #ea4c89;
+$red:         #D10505;
+$cardinal:    #EE2223;
+$yellow:      #F9BC32;
+$tangerine:   #DA9027;
+$grey:        #858585;
+$charcoal:    #313131;
+$firebrick:   #B22222;
+$whale:       #0074D9;
+$unicorn:     #ec5590; /*rename to french-rose*/
+$cerise-red:  #ea3773;
+$ship-grey:   #404043;
+$orange-peel: #FF9D00;
+
+$ice-blue:    #d5f0f7;
+$sea-foam:    #729ca8;
+$amaranth:    #de3248;
+$elm:         #226d84;
 
 // color utilities
-$color-lighten: 7%;
-$color-darken:  7%;
+$color-inherit--darken: rgba(0, 0, 0, 0.35);
+$color-inherit--lighten: rgba(255, 255, 255, 0.35);
 
 // color palette lightened
-$charcoal--light: lighten($charcoal, $color-lighten);
+$charcoal--light: lighten($charcoal, 7%);
 
 // color palette darkened
-$charcoal--dark: darken($charcoal, $color-darken);
+$charcoal--dark: darken($charcoal, 7%);

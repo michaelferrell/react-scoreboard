@@ -11,17 +11,18 @@
  */
 
 @mixin triangle($direction, $tri-size, $color, $margin) {
-  @if $direction == 'left' {
-    @include triangle-size($tri-size);
-    border-color: transparent $color transparent transparent;
-    margin-right: $margin;
-  } @else if $direction == 'right' {
-    @include triangle-size($tri-size);
-    border-color: transparent transparent transparent $color;
-    margin-left: $margin;
-  }
+  @include triangle-size($tri-size);
+  @include triangle-color($direction, $color);
+  margin: $margin;
 }
 
+@mixin triangle-color($direction, $color) {
+  @if $direction == 'left' {
+    border-color: transparent $color transparent transparent;
+  } @else if $direction == 'right' {
+    border-color: transparent transparent transparent $color;
+  }
+}
 @mixin triangle-size($tri-size) {
   border-width: $tri-size;
 }

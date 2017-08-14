@@ -7,7 +7,11 @@ class PeriodIndicators extends Component {
     return item <= this.props.cur_period ? true : false;
   }
   render() {
-    const periods_arr = [1, 2, 3, 4];
+    const total_periods = this.props.total_periods;
+    let periods_arr = [];
+    for (var i = 0; i < total_periods; i++) {
+      periods_arr.push(i + 1);
+    }
     const items = periods_arr.map((item) =>
       <PeriodIndicatorItem key={item} item={item} cur_period={this.props.cur_period} active={this.setActiveState(item)}></PeriodIndicatorItem>
     );

@@ -1,3 +1,6 @@
+@import '_triangle';
+@import '_box-helpers';
+
 /*
  * render-scoreboard-theme
  *
@@ -7,20 +10,24 @@
 @mixin render-scoreboard-theme() {
 	$scoreboard-themes: (
 		'dragon': (
-			'background-color': firebrick,
-			'outline-color': darken(firebrick, 10%)
+			'background-color': $firebrick,
+			'outline-color': $white,
 		),
 		'whale': (
-			'background-color': #0074D9,
-			'outline-color': #fff
+			'background-color': $whale,
+			'outline-color': $white,
 		),
 		'unicorn': (
-			'background-color': #ec5590,
-			'outline-color': #fff
+			'background-color': $unicorn,
+			'outline-color': $white,
 		),
 		'unicorn-dark': (
-			'background-color': #404043,
-			'outline-color': #fff
+			'background-color': $ship-grey,
+			'outline-color': lighten($ship-grey, 10%),
+		),
+		'ice': (
+			'background-color': $white,
+			'outline-color': $ice-blue,
 		)
 	);
 
@@ -41,22 +48,26 @@
 @mixin render-label-box-theme() {
 	$label-box-themes: (
 		'dragon': (
-			'background-color': firebrick,
-			'color': #fff
+			'background-color': $firebrick,
+			'color': $white,
 		),
 		'whale': (
-			'background-color': #0074D9,
-			'color': #fff,
+			'background-color': darken($whale, 10%),
+			'color': $white,
 		),
 		'unicorn': (
-			'background-color': #ec5590,
-			'color': #fff,
+			'background-color': lighten($unicorn, 4%),
+			'color': $white,
 			'font-weight': 400,
 		),
 		'unicorn-dark': (
-			'background-color': #ea3773,
-			'color': #fff,
+			'background-color': $cerise-red,
+			'color': $white,
 			'font-weight': 400,
+		),
+		'ice': (
+			'background-color': $sea-foam,
+			'color': $white,
 		)
 	);
 
@@ -80,28 +91,48 @@
 @mixin render-integer-box-theme() {
 	$integer-box-themes: (
 		'dragon': (
-			'background-color': firebrick,
-			'color': #fff,
+			'background-color': darken($firebrick, 8%),
+			'border-color': darken($firebrick, 20%),
+			'time-color': $yellow,
+			'score-color': $yellow,
 		),
 		'whale': (
-			'background-color': #0074D9,
+			'background-color': darken($whale, 18%),
+			'time-color': $orange-peel,
+			'score-color': $orange-peel,
+			'border-color': darken($whale, 20%),
+			'box-shadow': none,
 		),
 		'unicorn': (
-			'background-color': #272727,
-			'color': #ec4b8a,
+			'background-color': $mine,
+			'color': darken($unicorn, 7%),
+			'time-color': $cerise-red,
+			'score-color': $cerise-red,
 		),
 		'unicorn-dark': (
-			'background-color': #272727,
-			'color': #ea3773,
-		)
+			'background-color': $mine,
+			'time-color': $cerise-red,
+			'score-color': $cerise-red,
+		),
+		'ice': (
+			'background-color': $ice-blue,
+			'time-color': $elm,
+			'score-color': $amaranth,
+			'border-color': $ice-blue,
+			'box-shadow': none,
+		),
 	);
 
 	@each $theme, $styles in $integer-box-themes {
 		&.theme--#{$theme} {
   		background-color: map-get($styles, 'background-color');
-	    &.integer-time .digit-text,
+  		border-color: map-get($styles, 'border-color');
+  		@include box-shadow(map-get($styles, 'box-shadow'));
+	    &.integer-time .digit-text {
+  			color: map-get($styles, 'time-color');
+	    }
 	    &.integer-score .digit-text {
-  			color: map-get($styles, 'color');
+  			color: map-get($styles, 'score-color');
 	    }
 		}
 	}
@@ -116,16 +147,19 @@
 @mixin render-colon-box-theme() {
 	$colon-box-themes: (
 		'dragon': (
-			'color': #fff
+			'color': $yellow,
 		),
 		'whale': (
-			'color': #fff,
+			'color': $orange-peel,
 		),
 		'unicorn': (
-			'color': #fff,
+			'color': $white,
 		),
 		'unicorn-dark': (
-			'color': #ea3773,
+			'color': $cerise-red,
+		),
+		'ice': (
+			'color': $elm,
 		)
 	);
 
@@ -145,18 +179,24 @@
 @mixin render-period-indicators-theme() {
 	$period-indicators-themes: (
 		'dragon': (
-			'background-color': #fff,
+			'background-color': $color-inherit--darken,
+			'background-color--active': $white
 		),
 		'whale': (
-			'background-color': #fff,
+			'background-color': $white,
+			'background-color--active': $orange-peel,
 		),
 		'unicorn': (
-			'background-color': rgba(0, 0, 0, 0.4),
-			'background-color--active': $yellow
+			'background-color': $color-inherit--darken,
+			'background-color--active': $white
 		),
 		'unicorn-dark': (
-			'background-color': rgba(0, 0, 0, 0.4),
-			'background-color--active': #ea3773
+			'background-color': $color-inherit--darken,
+			'background-color--active': $cerise-red
+		),
+		'ice': (
+			'background-color': $elm,
+			'background-color--active': $amaranth,
 		)
 	);
 
@@ -166,6 +206,58 @@
   			background-color: map-get($styles, 'background-color');
 				&[data-active="true"] {
 					background-color: map-get($styles, 'background-color--active');
+				}
+			}
+		}
+	}
+}
+
+/*
+ * render-possession-indicators-theme
+ *
+ * @return {mixin} theme
+ */
+
+@mixin render-possession-indicators-theme() {
+	$possession-indicators-themes: (
+		'dragon': (
+			'border-color': $color-inherit--darken,
+			'border-color--active': $white,
+		),
+		'whale': (
+			'border-color': $color-inherit--darken,
+			'border-color--active': $orange-peel,
+		),
+		'unicorn': (
+			'border-color': $color-inherit--darken,
+			'border-color--active': $white,
+		),
+		'unicorn-dark': (
+			'border-color': $color-inherit--darken,
+			'border-color--active': $cerise-red,
+		),
+		'ice': (
+			'border-color': $elm,
+			'border-color--active': $amaranth,
+		)
+	);
+
+	@each $theme, $styles in $possession-indicators-themes {
+		&.theme--#{$theme} {
+			.triangle-left, {
+				@include triangle-color('left', map-get($styles, 'border-color'));
+			}
+			.triangle-right, {
+				@include triangle-color('right', map-get($styles, 'border-color'));
+			}
+			&[data-team-possession="away"] {
+				.triangle-right {
+					@include triangle-color('right', map-get($styles, 'border-color--active'));
+				}
+			}
+			&[data-team-possession="home"] {
+				.triangle-left {
+					@include triangle-color('left', map-get($styles, 'border-color--active'));
 				}
 			}
 		}
@@ -191,5 +283,7 @@
 		@include render-period-indicators-theme();
 	} @else if $component == 'colon-box' {
 		@include render-colon-box-theme();
+	} @else if $component == 'possession-indicators' {
+		@include render-possession-indicators-theme();
 	}
 }
