@@ -11,12 +11,10 @@
 @import 'helpers/mixins/_set-theme';
 
 @mixin scoreboard() {
-  // render theme
   @include render-component-theme('scoreboard');
 
-  // variables
   $sb-display: block;
-  $sb-radius: 3px;
+  $sb-radius: $default-rounded;
   $sb-bg: $charcoal;
   $sb-max-width: 450px;
   $sb-padding: 40px 15px;
@@ -25,12 +23,11 @@
   $sb-max-width--md: 400px;
   $sb-padding--md: 30px 20px;
   // screen-sm-less
-  $sb-max-width--sm: 100%;
+  $sb-max-width--sm: $full-width;
   $sb-padding--sm: 30px 10px;
   // layout type
   $sb-max-width--with-logos: 650px;
 
-  // styles
   @include rectangle($full-width, null, $sb-display, $sb-radius, $sb-bg, null, $sb-padding, null);
   @include box-inner-border(2px, $sb-inner-brd-color, -13px);
   @include center();
@@ -44,11 +41,12 @@
     max-width: $sb-max-width--md;
     padding: $sb-padding--md;
   }
+
   @media($screen-sm-less) {
     max-width: $sb-max-width--sm;
     padding: $sb-padding--sm;
     &[data-layout="with-logos"] {
-      max-width: 100%;
+      max-width: $full-width;
     }
   }
 }

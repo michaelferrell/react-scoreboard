@@ -13,8 +13,6 @@
 @import '_team-logo';
 @import '_possession-indicators';
 @import '_period-indicators';
-// not part of scoreboard base
-@import 'modules/_scoreboard-control-panel';
 
 @mixin load-all-modules() {
   @include scoreboard();

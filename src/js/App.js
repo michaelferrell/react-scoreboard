@@ -92,17 +92,30 @@ class App extends Component {
       total_periods,
       team_possession
     } = this.state;
+
+    const demo_btn_styles = {
+      borderRadius: '4px',
+      backgroundColor: '#272727',
+      margin: '20px 10px 0 10px',
+      padding: '3px 5px',
+      border: '1px solid rgba(255, 255, 255, 0.1)',
+      fontSize: '1.1rem',
+      lineHeight: '1.1rem',
+      fontWeight: '300',
+      color: '#FFFFFF'
+    }
+
     return (
       <div>
-        <div className="scoreboard-control-panel">
-          <button className="btn-demo" onClick={this.addHomeScore}>
+        <div className="scoreboard-control-panel" style={{textAlign: 'center'}}>
+          <button className="btn-demo" style={demo_btn_styles} onClick={this.addHomeScore}>
            +2 Home
           </button>
-          <button className="btn-demo" onClick={this.addAwayScore}>
+          <button className="btn-demo" style={demo_btn_styles} onClick={this.addAwayScore}>
            +2 Away
           </button>
         </div>
-        <div style={{'marginTop':'40px'}}>
+        <div style={{'marginTop':'40px', 'padding': '20px'}}>
         <Scoreboard
           // theme="whale"
           // theme="dragon"
@@ -123,7 +136,7 @@ class App extends Component {
           total_periods={total_periods}>
         </Scoreboard>
         </div>
-        <div style={{'marginTop':'40px'}}>
+        <div style={{'marginTop':'40px', 'padding': '20px'}}>
           <Scoreboard
             time={time}
             home_score={home_score}

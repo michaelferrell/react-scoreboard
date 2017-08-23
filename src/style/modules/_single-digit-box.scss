@@ -11,9 +11,7 @@
 @import 'helpers/mixins/_set-theme';
 
 @mixin single-digit-box() {
-  // styles
   .single-digit-box {
-    // render theme
     @include render-component-theme('single-digit-box');
     @include text-right();
     width: $full-width;
@@ -60,6 +58,30 @@
     }
     &[data-type="period"] .digit-style {
       @include font-constructor(3.3rem, 3.3rem, null, $yellow);
+    }
+
+    @media($screen-md-less) {
+      &[data-type="time"] .digit-style {
+        @include font-constructor(4.7rem, 4.7rem);
+      }
+      &[data-type="score"] .digit-style {
+        @include font-constructor(3.4rem, 3.4rem);
+      }
+      &[data-type="period"] .digit-style {
+        @include font-constructor(3rem, 3rem);
+      }
+    }
+
+    @media($screen-sm-less) {
+      &[data-type="time"] .digit-style {
+        @include font-constructor(4rem, 4rem);
+      }
+      &[data-type="score"] .digit-style {
+        @include font-constructor(3rem, 3rem);
+      }
+      &[data-type="period"] .digit-style {
+        @include font-constructor(2.6rem, 2.6rem);
+      }
     }
   }
 }

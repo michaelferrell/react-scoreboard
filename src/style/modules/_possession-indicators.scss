@@ -10,7 +10,6 @@
 @import 'helpers/mixins/_set-theme';
 
 @mixin possession-indicators() {
-  // variables
   $pi-margin: 27px 0 10px 0;
   $tri-size--left: 13px 17px 13px 0;
   $tri-size--right: 13px 0 13px 17px;
@@ -27,9 +26,7 @@
   $tri-size--left--sm: 10px 13px 10px 0;
   $tri-size--right--sm: 10px 0 10px 13px;
 
-	// styles
 	.possession-indicators {
-    // render theme
     @include render-component-theme('possession-indicators');
 
 		width: $full-width;

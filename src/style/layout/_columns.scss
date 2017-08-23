@@ -27,7 +27,7 @@
 	}
   .col-minutes,
   .col-seconds {
-    width: 44%
+    width: 44%;
   }
   .colon-box {
     width: 12%;
@@ -42,5 +42,17 @@
 		width: 54px;
 		@include center();
 	}
+
+  @media($screen-md-less) {
+		.period-box {
+			width: 50px;
+		}
+  }
+
+  @media($screen-sm-less) {
+		.period-box {
+			width: 48px;
+		}
+  }
 }
 

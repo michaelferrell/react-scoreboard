@@ -13,6 +13,3 @@
   @include load-all-modules();
   @include load-all-helpers();
 }
-
-// control panel not part of scoreboard component
-@include scoreboard-control-panel();

@@ -12,7 +12,6 @@
 @import 'helpers/mixins/_set-theme';
 
 @mixin label-box() {
-  // variables
   $label-box-bg-color: rgba(0, 0, 0, 0.4);
   $label-box-margin: 0 0 10px 0;
   $label-box-padding: 4px 0;
@@ -23,11 +22,8 @@
   // screen-md-less
   $label-box-padding--md: 4px 0;
 
-  // styles
   .label-box {
-    // render theme
     @include render-component-theme('label-box');
-
     @include rectangle(
       null,
       null,
@@ -52,7 +48,7 @@
       padding: $label-box-padding--md;
 
       > .label-text {
-        @include font-constructor(1.1rem, 1.1rem);
+        @include font-constructor(1.2rem, 1.2rem);
       }
     }
 
