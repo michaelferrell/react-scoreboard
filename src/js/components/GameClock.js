@@ -28,18 +28,23 @@ class GameClock extends Component {
 
   render() {
     let { theme, time } = this.props;
+    const type = 'time';
     return (
-      <section>
-        <div className={"integer-box integer-time " + theme}>
-          <SingleDigitBox digit={this.displayDigit(time, 'minutes', 'ones')} digits="2"></SingleDigitBox>
-          <SingleDigitBox digit={this.displayDigit(time, 'minutes', 'tens')} digits="2"></SingleDigitBox>
+      <div className="flex-row">
+        <div className="col-minutes">
+          <div className={"integer-box " + theme}>
+            <SingleDigitBox digit={this.displayDigit(time, 'minutes', 'ones')} type={type} digits="2"></SingleDigitBox>
+            <SingleDigitBox digit={this.displayDigit(time, 'minutes', 'tens')} type={type} digits="2"></SingleDigitBox>
+          </div>
         </div>
-        <div className={"colon-box " + theme}>:</div>
-        <div className={"integer-box integer-time " + theme}>
-          <SingleDigitBox digit={this.displayDigit(time, 'seconds', 'ones')} digits="2"></SingleDigitBox>
-          <SingleDigitBox digit={this.displayDigit(time, 'seconds', 'tens')} digits="2"></SingleDigitBox>
+        <div className="colon-box">:</div>
+          <div className="col-seconds">
+          <div className={"integer-box " + theme}>
+            <SingleDigitBox digit={this.displayDigit(time, 'seconds', 'ones')} type={type} digits="2"></SingleDigitBox>
+            <SingleDigitBox digit={this.displayDigit(time, 'seconds', 'tens')} type={type} digits="2"></SingleDigitBox>
+          </div>
         </div>
-      </section>
+      </div>
     );
   }
 }

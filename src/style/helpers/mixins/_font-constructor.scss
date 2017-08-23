@@ -16,20 +16,20 @@
  */
 @mixin font-constructor(
 	$size,
-	$line-height,
-	$weight: null,
-	$color: null,
-	$family: null,
-	$style: null,
-	$transform: null,
-	$kerning: null
+	$line-height: null,
+	$weight:      null,
+	$color:       null,
+	$family:      null,
+	$style:       null,
+	$transform:   null,
+	$kerning:     null
 	) {
-		font-size: $size;
-		line-height: $line-height;
-		font-weight: $weight;
-		color: $color;
-		font-family: $family;
-		font-style: $style;
+		font-size:      $size;
+		line-height:    $line-height;
+		font-weight:    $weight;
+		color:          $color;
+		font-family:    $family;
+		font-style:     $style;
 		text-transform: $transform;
 		letter-spacing: $kerning;
 }

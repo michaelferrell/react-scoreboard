@@ -14,8 +14,5 @@
 		@include flex();
 		@include flex-auxiliary($box-model-padding);
 	  white-space: no-wrap;
-	  -webkit-flex-wrap: wrap;
-	      -ms-flex-wrap: wrap;
-	          flex-wrap: wrap;
 	}
 }

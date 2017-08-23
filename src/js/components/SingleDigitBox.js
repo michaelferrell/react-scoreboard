@@ -2,16 +2,11 @@ import React, { Component } from 'react';
 
 class SingleDigitBox extends Component {
 	render() {
-		const class_names = this.props.digits === '3' ? 'single-digit-box box-third' : 'single-digit-box box-half';
 		return(
-	    <div className={class_names}>
-	      <div className="digit-positioning digit-silhouette">
-	        <span className="digit-text">8</span>
-	      </div>
-	      <div className="digit-positioning digit-live">
-	        <span className="digit-text">{this.props.digit}</span>
-	      </div>
-	    </div>
+      <div className="single-digit-box" data-type={this.props.type} data-digits={this.props.digits}>
+        <div className="digit-live digit-style">{this.props.digit}</div>
+        <div className="digit-silhouette digit-style"></div>
+      </div>
 		);
 	}
 }

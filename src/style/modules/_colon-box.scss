@@ -9,29 +9,14 @@
 @import 'helpers/mixins/_set-theme';
 
 @mixin colon-box() {
-  // variables
-  $colon-color: $yellow;
-
-  // styles
   .colon-box {
-    // render theme
     @include render-component-theme('colon-box');
-
-    @include font-constructor(4.8rem, 4.8rem, 400, $colon-color, $digital-7);
-    @include text-center();
-    display: inline-block;
-    padding-top: 7px;
-    vertical-align: top;
-    width: 14%;
-
+    @include font-constructor(5.3rem, 5.3rem, 400, $yellow, $digital-7);
     @media($screen-md-less) {
-      @include font-constructor(3rem, 3rem);
-      width: 15%;
+      @include font-constructor(5rem, 5rem);
     }
-
     @media($screen-sm-less) {
-      @include font-constructor(2rem, 2rem, 400);
-      width: 17%;
+      @include font-constructor(4.6rem, 4.6rem, 400);
     }
   }
 }

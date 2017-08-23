@@ -102,6 +102,7 @@ class App extends Component {
            +2 Away
           </button>
         </div>
+        <div style={{'marginTop':'40px'}}>
         <Scoreboard
           // theme="whale"
           // theme="dragon"
@@ -118,19 +119,22 @@ class App extends Component {
           cur_period={cur_period}
           // team_possession={team_possession}
           period_label="Period"
+          period_indicators="true"
           total_periods={total_periods}>
         </Scoreboard>
-        <Scoreboard
-          time={time}
-          home_score={home_score}
-          home_label="Home"
-          away_score={away_score}
-          away_label="Visitor"
-          cur_period={cur_period}
-          // team_possession={team_possession}
-          period_label="Half"
-          total_periods={total_periods}>
-        </Scoreboard>
+        </div>
+        <div style={{'marginTop':'40px'}}>
+          <Scoreboard
+            time={time}
+            home_score={home_score}
+            home_label="Home"
+            away_score={away_score}
+            away_label="Visitor"
+            cur_period={cur_period}
+            period_label="Half"
+            total_periods={total_periods}>
+          </Scoreboard>
+        </div>
       </div>
     );
   }

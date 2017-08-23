@@ -5,21 +5,16 @@
  * @return {mixin} The columns
  */
 
-@import '_flex-auxiliary';
-
 @mixin columns() {
-	// styles
-	.col-full {
-		width: $full-width;
-		@include flex-auxiliary($box-model-padding);
-	}
-	.col-main {
-		width: 70%;
-		@include center();
-		// background-color: #111;
-	}
-	.col-clock {
+	.col-content {
 		width: 100%;
+		@include center();
+	}
+	.col-content[data-layout="with-logos"] {
+		width: 64%;
+	}
+	.col-logo {
+		width: 18%;
 	}
 	.col-score {
 		width: 50%;
@@ -30,12 +25,22 @@
 	.col-scores.col-away {
 		padding-left: 15px;
 	}
+  .col-minutes,
+  .col-seconds {
+    width: 44%
+  }
+  .colon-box {
+    width: 12%;
+    text-align: center;
+  }
 	.col-period {
 		width: 50%;
 		@include center();
+		@include text-center();
 	}
-	.col-logo {
-		width: 15%;
+	.period-box {
+		width: 54px;
+		@include center();
 	}
 }
 

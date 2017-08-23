@@ -5,6 +5,9 @@
 @mixin text-center() {
 	text-align: center;
 }
+@mixin text-right() {
+	text-align: right;
+}
 @mixin rounded($px) {
 	border-radius: $px;
 }

@@ -10,15 +10,8 @@
 
 // top level namespace
 .react-scoreboard {
-  @include scoreboard();
-  @include integer-box();
-  @include label-box();
-  @include colon-box();
-  @include team-logo();
-  @include possession-indicators();
-  @include period-indicators();
-  @include flex-row();
-  @include columns();
+  @include load-all-modules();
+  @include load-all-helpers();
 }
 
 // control panel not part of scoreboard component

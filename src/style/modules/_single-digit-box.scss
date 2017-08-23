@@ -1,0 +1,65 @@
+/*
+ * single-digit-box module
+ * Defines a single-digit-box module used for holding and styling an individual digit
+ *
+ * @return {mixin} single-digit-box
+ */
+
+@import 'helpers/mixins/_font-constructor';
+@import 'helpers/mixins/_inset-box-shadow';
+@import 'helpers/mixins/_rectangle';
+@import 'helpers/mixins/_set-theme';
+
+@mixin single-digit-box() {
+  // styles
+  .single-digit-box {
+    // render theme
+    @include render-component-theme('single-digit-box');
+    @include text-right();
+    width: $full-width;
+    position: relative;
+    // adjust width based on how many digits are in the integer box
+    &[data-digits="1"] {
+      width: $full-width;
+    }
+    &[data-digits="2"] {
+      width: $half-width;
+    }
+    &[data-digits="3"] {
+      width: $third-width;
+    }
+    &[data-digits="4"] {
+      width: $quarter-width;
+    }
+    .digit-live {
+      @include box-position(absolute, 0, 0);
+    }
+    .digit-silhouette {
+      opacity: .08;
+      @include box-position(relative, 0, 0);
+    }
+    .digit-silhouette:after {
+      content: '8'; // append the number 8 to each digit box for a nice silhouette effect
+    }
+    .digit-live,
+    .digit-silhouette {
+      padding: 0 6px;
+    }
+    .digit-style {
+      @include font-constructor(4rem, 4rem, 400, $yellow, $digital-7);
+    }
+    &[data-type="time"] .digit-style {
+      @include font-constructor(5rem, 5rem);
+    }
+    &[data-type="score"] .digit-style {
+      @include font-constructor(4rem, 4rem, null, $red);
+    }
+    &[data-type="score"] .digit-silhouette {
+      opacity: .14;
+      font-family: $digital-7;
+    }
+    &[data-type="period"] .digit-style {
+      @include font-constructor(3.3rem, 3.3rem, null, $yellow);
+    }
+  }
+}

@@ -5,7 +5,9 @@ import LabelBox from './components/LabelBox';
 import ScoreBox from './components/ScoreBox';
 import TeamLogo from './components/TeamLogo';
 import PossessionIndicators from './components/PossessionIndicators';
+import PeriodBox from './components/PeriodBox';
 import PeriodIndicators from './components/PeriodIndicators';
+import SingleDigitBox from './components/SingleDigitBox';
 
 class Scoreboard extends Component {
   render() {
@@ -21,7 +23,8 @@ class Scoreboard extends Component {
       away_score,
       away_label,
       away_logo,
-      team_possession
+      team_possession,
+      period_indicators
     } = this.props;
 
     theme = theme === undefined ? Themes['dark'] : Themes[theme];
@@ -41,22 +44,36 @@ class Scoreboard extends Component {
       render_away_logo = <TeamLogo src={away_logo} team="away"></TeamLogo>;
     }
 
+    let render_period = null;
+    if (period_indicators == 'true') {
+      render_period = '';
+    }
+
+    let render_period_box = <PeriodBox></PeriodBox>;
+    if (period_indicators == 'true') {
+      render_period_box = null;
+    }
+
+    let render_period_indicators = null;
+    if (period_indicators == 'true') {
+      render_period_indicators = <PeriodIndicators total_periods={total_periods} cur_period={cur_period} theme={theme}></PeriodIndicators>;
+    }
+
+    let layout_type = 'default';
+    if (home_logo !== undefined && away_logo !== undefined) {
+      layout_type = 'with-logos';
+    }
+
     return (
-      <section className={"react-scoreboard " + theme}>
+      <section className={"react-scoreboard " + theme} data-layout={layout_type}>
         <div className="flex-row">
-          <div className="col-main">
-              <div className="flex-row">
-                <div className="col-clock">
-                  <GameClock time={time} theme={theme}></GameClock>
-                </div>
-              </div>
+          <div className="col-content" data-layout={layout_type}>
+            <GameClock time={time} theme={theme}></GameClock>
           </div>
         </div>
         <div className="flex-row">
-          <div className="col-logo">
-            {render_home_logo}
-          </div>
-          <div className="col-main">
+          {render_home_logo}
+          <div className="col-content" data-layout={layout_type}>
             <div className="flex-row">
               <div className="col-score col-home">
                 <LabelBox label={home_label} theme={theme}></LabelBox>
@@ -66,16 +83,15 @@ class Scoreboard extends Component {
                 <LabelBox label={away_label} theme={theme}></LabelBox>
                 <ScoreBox score={away_score} theme={theme}></ScoreBox>
               </div>
-              <div className="col-period">
+              <div className="col-period" data-layout={layout_type}>
                 {possession_indicators}
                 <LabelBox label={period_label} theme={theme}></LabelBox>
-                <PeriodIndicators total_periods={total_periods} cur_period={cur_period} theme={theme}></PeriodIndicators>
+                {render_period_box}
+                {render_period_indicators}
               </div>
             </div>
           </div>
-          <div className="col-logo">
-            {render_away_logo}
-          </div>
+          {render_away_logo}
         </div>
       </section>
     );

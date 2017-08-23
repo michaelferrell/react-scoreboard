@@ -7,9 +7,23 @@
 
 @import '_scoreboard';
 @import '_integer-box';
+@import '_single-digit-box';
 @import '_colon-box';
 @import '_label-box';
 @import '_team-logo';
 @import '_possession-indicators';
 @import '_period-indicators';
+// not part of scoreboard base
 @import 'modules/_scoreboard-control-panel';
+
+@mixin load-all-modules() {
+  @include scoreboard();
+  @include integer-box();
+  @include single-digit-box();
+  @include label-box();
+  @include colon-box();
+  @include team-logo();
+  @include possession-indicators();
+  @include period-indicators();
+}
+

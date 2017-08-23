@@ -18,24 +18,27 @@
   $sb-display: block;
   $sb-radius: 3px;
   $sb-bg: $charcoal;
-  $sb-max-width: 650px;
-  $sb-top-margin: 40px;
-  $sb-padding: 30px 10px;
+  $sb-max-width: 450px;
   $sb-padding: 40px 15px;
   $sb-inner-brd-color: $charcoal--light;
   // screen-md-less
   $sb-max-width--md: 400px;
   $sb-padding--md: 30px 20px;
   // screen-sm-less
-  $sb-max-width--sm: 300px;
+  $sb-max-width--sm: 100%;
   $sb-padding--sm: 30px 10px;
+  // layout type
+  $sb-max-width--with-logos: 650px;
 
   // styles
   @include rectangle($full-width, null, $sb-display, $sb-radius, $sb-bg, null, $sb-padding, null);
   @include box-inner-border(2px, $sb-inner-brd-color, -13px);
   @include center();
   max-width: $sb-max-width;
-  margin-top: $sb-top-margin;
+
+  &[data-layout="with-logos"] {
+    max-width: $sb-max-width--with-logos;
+  }
 
   @media($screen-md-less) {
     max-width: $sb-max-width--md;
@@ -44,5 +47,8 @@
   @media($screen-sm-less) {
     max-width: $sb-max-width--sm;
     padding: $sb-padding--sm;
+    &[data-layout="with-logos"] {
+      max-width: 100%;
+    }
   }
 }
