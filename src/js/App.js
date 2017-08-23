@@ -20,7 +20,7 @@ class App extends Component {
       cur_period: 1,
       total_periods: TOTAL_PERIODS,
       game_is_live: false,
-      home_score: 23,
+      home_score: 12,
       away_score: 19,
       team_possession: 'away',
     };
