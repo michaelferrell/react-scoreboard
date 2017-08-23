@@ -53,6 +53,12 @@
 		.period-box {
 			width: 48px;
 		}
+		.col-content[data-layout="with-logos"] {
+			width: $full-width;
+		}
+		.col-logo[data-layout="with-logos"] {
+			display: none;
+		}
   }
 }
 

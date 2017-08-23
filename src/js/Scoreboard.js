@@ -29,6 +29,11 @@ class Scoreboard extends Component {
 
     theme = theme === undefined ? Themes['dark'] : Themes[theme];
 
+    let layout_type = 'default';
+    if (home_logo !== undefined && away_logo !== undefined) {
+      layout_type = 'with-logos';
+    }
+
     let possession_indicators = null;
     if (team_possession !== undefined) {
       possession_indicators = <PossessionIndicators team_possession={team_possession} theme={theme}></PossessionIndicators>;
@@ -36,12 +41,12 @@ class Scoreboard extends Component {
 
     let render_home_logo = null;
     if (home_logo !== undefined) {
-      render_home_logo = <TeamLogo src={home_logo} team="home"></TeamLogo>;
+      render_home_logo = <TeamLogo src={home_logo} team="home" layout={layout_type}></TeamLogo>;
     }
 
     let render_away_logo = null;
     if (away_logo !== undefined) {
-      render_away_logo = <TeamLogo src={away_logo} team="away"></TeamLogo>;
+      render_away_logo = <TeamLogo src={away_logo} team="away" layout={layout_type}></TeamLogo>;
     }
 
     let render_period = null;
@@ -57,11 +62,6 @@ class Scoreboard extends Component {
     let render_period_indicators = null;
     if (period_indicators == 'true') {
       render_period_indicators = <PeriodIndicators total_periods={total_periods} cur_period={cur_period} theme={theme}></PeriodIndicators>;
-    }
-
-    let layout_type = 'default';
-    if (home_logo !== undefined && away_logo !== undefined) {
-      layout_type = 'with-logos';
     }
 
     return (
