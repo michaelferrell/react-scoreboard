@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import Scoreboard from './Scoreboard';
 import Digital7 from './../fonts/font-digital-7.css';
 import DotMatrix from './../fonts/dotmatrix.css';
-import './../style/App.css';
+import './../style/index.css';
+import './../style/demo.css';
 import HomeLogo from './../images/golden-state-warriors-logo.png'
 import AwayLogo from './../images/cleveland-cavaliers-logo.png'
 
@@ -12,7 +13,7 @@ const QUARTERS = 4;
 const TOTAL_PERIODS = 4;
 const ADD_AMOUNT = 2;
 
-class App extends Component {
+class Demo extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -153,4 +154,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default Demo;

@@ -11,12 +11,13 @@ const PATHS = {
     devServer: path.join(__dirname, 'dev-server'),
 };
 
+console.log(new webpack.EnvironmentPlugin(['NODE_ENV']))
+console.log(process.env.NODE_ENV)
+
 if (!process.env.NODE_ENV) {
   process.env.NODE_ENV = 'production';
 }
 
-//example environment points at preloaded example
-//see: react-json-view/example/example.js
 const entrypoint = PATHS.js + '/index.js';
 
 const config = {
