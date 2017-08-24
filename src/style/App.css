@@ -6,7 +6,6 @@
 @import 'base/_all';
 @import 'layout/_all';
 @import 'modules/_all';
-@import 'themes/_dark';
 
 // top level namespace
 .react-scoreboard {
