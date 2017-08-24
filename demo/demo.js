@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import Scoreboard from './Scoreboard';
-import Digital7 from './../fonts/font-digital-7.css';
-import DotMatrix from './../fonts/dotmatrix.css';
-import './../style/index.css';
-import './../style/demo.css';
-import HomeLogo from './../images/golden-state-warriors-logo.png'
-import AwayLogo from './../images/cleveland-cavaliers-logo.png'
+import ReactDOM from 'react-dom';
+import Scoreboard from '../src/js/./index';
+import Digital7 from '../src/fonts/font-digital-7.css';
+import DotMatrix from '../src/fonts/dotmatrix.css';
+import '../src/style/index.css';
+import './demo.css';
+import HomeLogo from '../src/images/golden-state-warriors-logo.png'
+import AwayLogo from '../src/images/cleveland-cavaliers-logo.png'
 
 const QUARTER_LENGTH = 720;
 // const QUARTER_LENGTH = 3
@@ -29,6 +30,7 @@ class Demo extends Component {
 
   componentDidMount() {
     this.startTimer();
+    console.log('yasssssssssssss')
   }
 
   pauseTime = () => {
@@ -154,4 +156,5 @@ class Demo extends Component {
   }
 }
 
-export default Demo;
+// export default Demo;
+ReactDOM.render(<Demo />, document.getElementById('root'));

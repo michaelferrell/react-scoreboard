@@ -9,19 +9,22 @@ const PATHS = {
     style: path.join(__dirname, 'src/style'),
     build: path.join(__dirname, 'public'),
     devServer: path.join(__dirname, 'dev-server'),
+    demo: path.join(__dirname, 'demo'),
 };
-
-console.log(new webpack.EnvironmentPlugin(['NODE_ENV']))
-console.log(process.env.NODE_ENV)
 
 if (!process.env.NODE_ENV) {
   process.env.NODE_ENV = 'production';
 }
 
-const entrypoint = PATHS.js + '/index.js';
+let entrypoints = [PATHS.js + '/index.js', PATHS.demo + '/demo.js'];
+
+if (process.env.NODE_ENV == 'production') {
+  // set entrypoints to just index.js (dont want to include demo in the primary build?)
+}
 
 const config = {
-  entry: [entrypoint],
+  // which files should be included in the bundle and outputted to main.js
+  entry: entrypoints,
   externals: {
     'cheerio': 'window',
       react: {
@@ -81,7 +84,8 @@ const config = {
             loader: 'babel-loader'
           }
         ],
-        include: [PATHS.js]
+        // which directories should include libaries
+        include: [PATHS.js, PATHS.demo]
       },
       {
         test: /\.s?css$/,
