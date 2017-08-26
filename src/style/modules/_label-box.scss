@@ -37,7 +37,7 @@
     )
 
     > .label-text {
-      @include font-constructor(1.6rem, 1.6rem, $label-text-weight, $label-text-color, $digital-7, null, uppercase);
+      @include font-constructor(1.6rem, 1.6rem, $label-text-weight, $label-text-color, $ds-digital, null, uppercase);
     }
     &.period-label {
       @include center();

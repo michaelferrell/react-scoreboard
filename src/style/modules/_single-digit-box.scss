@@ -44,7 +44,6 @@
       padding: 0 6px;
     }
     .digit-style {
-      // @include font-constructor(4rem, 4rem, 400, $yellow, $digital-7);
       @include font-constructor(4rem, 4rem, 400, $yellow, $ds-digital);
     }
     &[data-type="time"] .digit-style {
