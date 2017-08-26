@@ -44,7 +44,8 @@
       padding: 0 6px;
     }
     .digit-style {
-      @include font-constructor(4rem, 4rem, 400, $yellow, $digital-7);
+      // @include font-constructor(4rem, 4rem, 400, $yellow, $digital-7);
+      @include font-constructor(4rem, 4rem, 400, $yellow, $ds-digital);
     }
     &[data-type="time"] .digit-style {
       @include font-constructor(5rem, 5rem);
@@ -54,7 +55,6 @@
     }
     &[data-type="score"] .digit-silhouette {
       opacity: .14;
-      font-family: $digital-7;
     }
     &[data-type="period"] .digit-style {
       @include font-constructor(3.3rem, 3.3rem, null, $yellow);

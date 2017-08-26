@@ -1,0 +1,10 @@
+@font-face {
+	font-family: 'DS-Digital';
+	src: url('DS-Digital.eot');
+	src: url('DS-Digital.eot?#iefix') format('embedded-opentype'),
+		url('DS-Digital.woff2') format('woff2'),
+		url('DS-Digital.woff') format('woff'),
+		url('DS-Digital.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}

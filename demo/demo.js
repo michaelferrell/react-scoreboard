@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import Scoreboard from '../src/js/./index';
-import Digital7 from '../src/fonts/font-digital-7.css';
-import DotMatrix from '../src/fonts/dotmatrix.css';
-import '../src/style/index.css';
-import './demo.css';
 import HomeLogo from '../src/images/golden-state-warriors-logo.png'
 import AwayLogo from '../src/images/cleveland-cavaliers-logo.png'
+import './demo.css';
 
 const QUARTER_LENGTH = 720;
 // const QUARTER_LENGTH = 3
@@ -22,7 +19,7 @@ class Demo extends Component {
       cur_period: 1,
       total_periods: TOTAL_PERIODS,
       game_is_live: false,
-      home_score: 12,
+      home_score: 14,
       away_score: 19,
       team_possession: 'away',
     };

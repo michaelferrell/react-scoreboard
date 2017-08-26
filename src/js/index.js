@@ -1,4 +1,5 @@
 import { Component } from 'react';
+
 import GameClock from './components/GameClock';
 import Themes from './helpers/themes';
 import LabelBox from './components/LabelBox';
@@ -8,6 +9,12 @@ import PossessionIndicators from './components/PossessionIndicators';
 import PeriodBox from './components/PeriodBox';
 import PeriodIndicators from './components/PeriodIndicators';
 import SingleDigitBox from './components/SingleDigitBox';
+
+import Digital7 from '../fonts/font-digital-7.css';
+import DotMatrix from '../fonts/dotmatrix.css';
+import DsDigital from '../fonts/ds-digital.css';
+
+import '../style/index.css';
 
 export default class extends Component {
   render() {
