@@ -10,8 +10,6 @@ import PeriodBox from './components/PeriodBox';
 import PeriodIndicators from './components/PeriodIndicators';
 import SingleDigitBox from './components/SingleDigitBox';
 
-import Digital7 from '../fonts/font-digital-7.css';
-import DotMatrix from '../fonts/dotmatrix.css';
 import DsDigital from '../fonts/ds-digital.css';
 
 import '../style/index.css';
