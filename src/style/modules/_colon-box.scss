@@ -11,12 +11,12 @@
 @mixin colon-box() {
   .colon-box {
     @include render-component-theme('colon-box');
-    @include font-constructor(5.3rem, 5.3rem, 400, $yellow, $digital-7);
+    @include font-constructor(4.8rem, 4.8rem, 400, $yellow, $ds-digital);
     @media($screen-md-less) {
-      @include font-constructor(5rem, 5rem);
+      @include font-constructor(4.4rem, 4.4rem);
     }
     @media($screen-sm-less) {
-      @include font-constructor(4.6rem, 4.6rem, 400);
+      @include font-constructor(3.7rem, 3.7rem);
     }
   }
 }
