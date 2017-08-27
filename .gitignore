@@ -10,7 +10,7 @@
 /dist
 
 # demo build
-/demo/dist
+demo/dist
 
 /dev-server/dist
 
