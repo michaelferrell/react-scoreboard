@@ -7,12 +7,6 @@ node_modules
 coverage
 
 # production
-dist
-
-# demo build
-# TODO demo/dist
-
-# dev server build
-# TODO dev-server/dist
+/dist
 
 npm-debug.log*
