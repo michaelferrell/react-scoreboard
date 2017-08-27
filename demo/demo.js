@@ -106,7 +106,7 @@ class Demo extends Component {
     }
 
     return (
-      <div>
+      <div className="demo-app">
         <div className="scoreboard-control-panel" style={{textAlign: 'center'}}>
           <button className="btn-demo" style={demo_btn_styles} onClick={this.addHomeScore}>
            +2 Home

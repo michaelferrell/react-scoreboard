@@ -14,7 +14,7 @@ import DsDigital from '../fonts/ds-digital.css';
 
 import '../style/index.css';
 
-export default class extends Component {
+class Scoreboard extends Component {
   render() {
     let {
       theme,
@@ -102,3 +102,5 @@ export default class extends Component {
     );
   }
 }
+
+export default Scoreboard;
