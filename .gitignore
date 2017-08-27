@@ -7,7 +7,7 @@ node_modules
 coverage
 
 # production
-dist
+/dist
 
 # demo build
 # TODO demo/dist
