@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import Scoreboard from '../src/js/./index';
-import HomeLogo from '../src/images/golden-state-warriors-logo.png'
-import AwayLogo from '../src/images/cleveland-cavaliers-logo.png'
+import Scoreboard from '../../src/js/index';
+import HomeLogo from '../../src/images/golden-state-warriors-logo.png'
+import AwayLogo from '../../src/images/cleveland-cavaliers-logo.png'
 import './demo.css';
 
 const QUARTER_LENGTH = 720;
