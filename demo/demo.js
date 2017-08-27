@@ -27,7 +27,6 @@ class Demo extends Component {
 
   componentDidMount() {
     this.startTimer();
-    console.log('yasssssssssssss')
   }
 
   pauseTime = () => {

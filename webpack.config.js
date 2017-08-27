@@ -7,7 +7,7 @@ const PATHS = {
     js: path.join(__dirname, 'src/js'),
     fonts: path.join(__dirname, 'src/fonts/'),
     style: path.join(__dirname, 'src/style'),
-    build: path.join(__dirname, 'public'),
+    build: path.join(__dirname, 'dist'),
     devServer: path.join(__dirname, 'dev-server'),
     demo: path.join(__dirname, 'demo'),
 };
