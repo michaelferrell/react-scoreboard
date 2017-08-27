@@ -9,6 +9,8 @@
 # production
 /dist
 
+/dev-server/dist
+
 # misc
 /mockups
 

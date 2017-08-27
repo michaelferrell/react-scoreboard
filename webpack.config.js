@@ -5,30 +5,40 @@ const wds_port = 3000;
 const PATHS = {
     src: path.join(__dirname, 'src'),
     js: path.join(__dirname, 'src/js'),
-    fonts: path.join(__dirname, 'src/fonts/'),
-    style: path.join(__dirname, 'src/style'),
     build: path.join(__dirname, 'dist'),
     devServer: path.join(__dirname, 'dev-server'),
-    demo: path.join(__dirname, 'demo'),
+    demo: path.join(__dirname, 'demo')
 };
 
-console.log('----------------------')
-console.log('----------------------')
-console.log(process.env.NODE_ENV)
+console.log('Webpack running with environment: ', process.env.NODE_ENV)
 
+//default environment to production if not set
 if (!process.env.NODE_ENV) {
   process.env.NODE_ENV = 'production';
 }
 
-let entrypoints = [PATHS.js + '/index.js', PATHS.demo + '/demo.js'];
+//environment specific config
+let includes = [PATHS.js]
+let devtool = false
+let output_path = PATHS.build
+let entrypoint = PATHS.js + '/index.js'
 
-if (process.env.NODE_ENV == 'production') {
-  // set entrypoints to just index.js (dont want to include demo in the primary build?)
+if (process.env.NODE_ENV == 'development') {
+  includes.push(PATHS.devServer)
+  devtool = 'eval-source-map'
+  output_path = PATHS.devServer + '/dist'
+  entrypoint = PATHS.devServer + '/src/dev-server.js'
+
+} else if (process.env.NODE_ENV == 'demo') {
+  includes.push(PATHS.demo)
+  output_path = PATHS.demo + '/dist'
+  entrypoint = PATHS.demo + '/src/demo.js'
 }
 
+
 const config = {
-  // which files should be included in the bundle and outputted to main.js
-  entry: entrypoints,
+  // entrypoint to build output
+  entry: [entrypoint],
   externals: {
     'cheerio': 'window',
       react: {
@@ -52,10 +62,10 @@ const config = {
     hot: true,
     inline: true,
     historyApiFallback: true,
-    contentBase: PATHS.devServer
+    contentBase: PATHS.devServer + '/dist'
   },
   output: {
-    path: PATHS.build,
+    path: output_path,
     filename: 'main.js',
     library: 'reactDockerTemplate',
     libraryTarget: 'umd'
@@ -67,7 +77,7 @@ const config = {
   resolve: {
     extensions: [".js", ".json", ".css", ".scss"]
   },
-  devtool: process.env.NODE_ENV == 'production' ? false : 'eval-source-map',
+  devtool: devtool,
   module: {
     rules: [
       {
@@ -88,8 +98,7 @@ const config = {
             loader: 'babel-loader'
           }
         ],
-        // which directories should include libaries
-        include: [PATHS.js, PATHS.demo]
+        include: includes
       },
       {
         test: /\.s?css$/,

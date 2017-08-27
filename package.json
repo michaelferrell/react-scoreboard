@@ -36,10 +36,8 @@
     "react-dom": "^15.6.1"
   },
   "scripts": {
-    "prepare:dev": "cp ./src/html/index.html.template ./dev-server/index.html",
-    "prepare:build": "cp ./src/html/index.html.template ./public/index.html",
-    "dev_original": "npm run prepare:dev && webpack-dev-server",
-    "dev": "npm run prepare:dev && cross-env NODE_ENV=development webpack-dev-server",
-    "build": "npm run prepare:build && webpack -p --display-error-details --progress"
+    "demo": "cross-env NODE_ENV=demo webpack -p --display-error-details --progress",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server",
+    "build": "cross-env NODE_ENV=production webpack -p --display-error-details --progress"
   }
 }
