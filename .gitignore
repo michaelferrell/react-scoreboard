@@ -9,9 +9,9 @@
 # production
 /dist
 
-/dev-server/dist
+# demo build
+/demo/dist
 
-# misc
-/mockups
+/dev-server/dist
 
 npm-debug.log*
