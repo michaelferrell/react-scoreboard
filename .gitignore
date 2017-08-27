@@ -10,9 +10,9 @@ coverage
 dist
 
 # demo build
-demo/dist
+# TODO demo/dist
 
 # dev server build
-dev-server/dist
+# TODO dev-server/dist
 
 npm-debug.log*
