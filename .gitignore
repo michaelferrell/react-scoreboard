@@ -12,6 +12,7 @@ dist
 # demo build
 demo/dist
 
+# dev server build
 dev-server/dist
 
 npm-debug.log*
