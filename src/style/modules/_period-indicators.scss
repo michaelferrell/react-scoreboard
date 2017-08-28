@@ -23,6 +23,7 @@
 	.period-indicators {
     @include render-component-theme('period-indicators');
 		@include text-center();
+		margin-top: 5px;
 
 		> .indicator-item {
 			@include circle(

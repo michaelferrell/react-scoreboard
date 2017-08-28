@@ -5,24 +5,65 @@ import HomeLogo from '../../src/images/golden-state-warriors-logo.png'
 import AwayLogo from '../../src/images/cleveland-cavaliers-logo.png'
 import './dev-server.css';
 
-const QUARTER_LENGTH = 720;
-// const QUARTER_LENGTH = 3
-const QUARTERS = 4;
-const TOTAL_PERIODS = 4;
-const ADD_AMOUNT = 2;
+class App extends Component {
+  render() {
+    return (
+      <div>
+        {/*TODO: update time property to be period_length*/}
+        <ScoreboardDemo
+          sport_name="Basketball"
+          add_amount={2}
+          time={720}
+          period_label="Period"
+          period_box={false}
+          period_indicators={true}
+          cur_period={1}
+          total_periods={4}
+          home_score={12}
+          away_score={9}
+          home_label="Warriors"
+          away_label="Cavaliers"
+          home_logo={HomeLogo}
+          away_logo={AwayLogo}
+        />
+        <ScoreboardDemo
+          sport_name="Hockey"
+          add_amount={1}
+          time={1200}
+          period_label="Period"
+          period_box={true}
+          period_indicators={true}
+          cur_period={1}
+          total_periods={3}
+          home_score={1}
+          away_score={0}
+          home_label="Flyers"
+          away_label="Tigers"
+        />
+        <ScoreboardDemo
+          sport_name="Soccer"
+          add_amount={1}
+          time={2700}
+          period_label="Half"
+          period_box={true}
+          period_indicators={false}
+          cur_period={1}
+          total_periods={2}
+          home_score={2}
+          away_score={3}
+          home_label="Man United"
+          away_label="Real Madrid"
+        />
+      </div>
+    );
+  }
+}
 
-class Demo extends Component {
+class ScoreboardDemo extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      time: QUARTER_LENGTH,
-      cur_period: 1,
-      total_periods: TOTAL_PERIODS,
-      game_is_live: false,
-      home_score: 14,
-      away_score: 19,
-      team_possession: 'away',
-    };
+    this.state = Object.assign({}, this.props);
+    this.state.game_is_live = false;
   }
 
   componentDidMount() {
@@ -36,7 +77,7 @@ class Demo extends Component {
     }
   }
 
-  startTimer = () => {;
+  startTimer = () => {
     if (!this.state.game_is_live) {
       this.setState({
         game_is_live: true,
@@ -55,13 +96,13 @@ class Demo extends Component {
   }
 
   EndPeriod = () => {
-    console.log('End of ' + this.state.cur_period)
+    console.log('End of ' + this.state.period_label + ' ' + this.state.cur_period)
     this.setState({game_is_live: false});
     clearInterval(this.state.timer_interval);
     let cur_period = this.state.cur_period + 1;
-    if (cur_period <= QUARTERS) {
+    if (cur_period <= this.props.total_periods) {
       this.setState({
-        time: QUARTER_LENGTH,
+        time: this.props.period_length,
         cur_period: cur_period,
       });
       this.startTimer();
@@ -71,67 +112,64 @@ class Demo extends Component {
   }
 
   gameOver = () => {
-    console.log('gameover!');
+    console.log('The ' + this.state.sport_name + ' game is over!');
   }
 
   addHomeScore = () => {
-    this.setState({'home_score': this.state.home_score + ADD_AMOUNT})
+    this.setState({'home_score': this.state.home_score + this.state.add_amount})
   }
 
   addAwayScore = () => {
-    this.setState({'away_score': this.state.away_score + ADD_AMOUNT})
+    this.setState({'away_score': this.state.away_score + this.state.add_amount})
   }
 
   render() {
     let {
+      add_amount,
       time,
       home_score,
       away_score,
+      home_label,
+      away_label,
+      home_logo,
+      away_logo,
       cur_period,
+      period_label,
+      period_box,
+      period_indicators,
       total_periods,
       team_possession
     } = this.state;
 
     return (
       <div className="demo-app">
+        <h2 className="demo-title">{this.state.sport_name}</h2>
         <div className="scoreboard-control-panel">
           <button className="btn-demo" onClick={this.addHomeScore}>
-           +2 Home
+           +{add_amount} Points Home
           </button>
           <button className="btn-demo" onClick={this.addAwayScore}>
-           +2 Away
+           +{add_amount} Points Away
           </button>
-        </div>
-        <div className="demo-container">
-        <Scoreboard
-          // theme="whale"
-          // theme="dragon"
-          // theme="unicorn"
-          // theme="unicorn-dark"
-          // theme="ice"
-          time={time}
-          home_score={home_score}
-          home_label="Warriors"
-          home_logo={HomeLogo}
-          away_score={away_score}
-          away_label="Cavaliers"
-          away_logo={AwayLogo}
-          cur_period={cur_period}
-          // team_possession={team_possession}
-          period_label="Period"
-          period_indicators="true"
-          total_periods={total_periods}>
-        </Scoreboard>
         </div>
         <div className="demo-container">
           <Scoreboard
+            // theme="whale"
+            // theme="dragon"
+            // theme="unicorn"
+            // theme="unicorn-dark"
+            // theme="ice"
             time={time}
             home_score={home_score}
-            home_label="Home"
             away_score={away_score}
-            away_label="Visitor"
+            home_label={home_label}
+            away_label={away_label}
+            home_logo={home_logo}
+            away_logo={away_logo}
             cur_period={cur_period}
-            period_label="Half"
+            period_label={period_label}
+            period_box={period_box}
+            period_indicators={period_indicators}
             total_periods={total_periods}>
           </Scoreboard>
         </div>
@@ -141,4 +179,4 @@ class Demo extends Component {
 }
 
 // export default Demo;
-ReactDOM.render(<Demo />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('root'));

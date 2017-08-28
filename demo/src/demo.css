@@ -1,14 +1,18 @@
 body {
 	background-color: #111;
 }
-.demo-app {}
+.demo-app {
+	border-top: 1px solid #444;
+	padding-top: 25px;
+	margin-top: 25px;
+}
 
 .demo-app .scoreboard-control-panel {
 	text-align: center;
-	margin-top: 10px;
+	margin-top: 15px;
 }
 .demo-app .demo-container {
-	margin-top: 40px;
+	margin-top: 20px;
 	padding: 20px;
 }
 .demo-app .btn-demo {
@@ -22,9 +26,9 @@ body {
 	font-weight: 300;
 	color: #999;
 }
-.demo-app h1 {
-	text-align: center;
-	margin-top: 40px;
+.demo-app .demo-title {
 	color: #999;
 	font-size: 2rem;
+	font-weight: 300;
+	text-align: center;
 }

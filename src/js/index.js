@@ -29,13 +29,18 @@ class Scoreboard extends Component {
       away_label,
       away_logo,
       team_possession,
+      period_box,
       period_indicators
     } = this.props;
 
     theme = theme === undefined ? Themes['dark'] : Themes[theme];
 
     let layout_type = 'default';
-    if (home_logo !== undefined && away_logo !== undefined) {
+    if (home_logo &&
+      home_logo.length > 0 &&
+      away_logo &&
+      away_logo.length > 0
+    ) {
       layout_type = 'with-logos';
     }
 
@@ -45,27 +50,22 @@ class Scoreboard extends Component {
     }
 
     let render_home_logo = null;
-    if (home_logo !== undefined) {
+    if (home_logo && home_logo.length > 0) {
       render_home_logo = <TeamLogo src={home_logo} team="home" layout={layout_type}></TeamLogo>;
     }
 
     let render_away_logo = null;
-    if (away_logo !== undefined) {
+    if (away_logo && away_logo.length > 0) {
       render_away_logo = <TeamLogo src={away_logo} team="away" layout={layout_type}></TeamLogo>;
     }
 
-    let render_period = null;
-    if (period_indicators == 'true') {
-      render_period = '';
-    }
-
-    let render_period_box = <PeriodBox></PeriodBox>;
-    if (period_indicators == 'true') {
-      render_period_box = null;
+    let render_period_box = null;
+    if (period_box == true) {
+      render_period_box = <PeriodBox total_periods={total_periods} cur_period={cur_period}></PeriodBox>;
     }
 
     let render_period_indicators = null;
-    if (period_indicators == 'true') {
+    if (period_indicators == true) {
       render_period_indicators = <PeriodIndicators total_periods={total_periods} cur_period={cur_period} theme={theme}></PeriodIndicators>;
     }
 
