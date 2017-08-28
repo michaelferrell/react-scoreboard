@@ -14,7 +14,6 @@
   $integer-box-display: inline-block;
   $integer-box-radius: $default-rounded;
   $integer-box-bg-color: $charcoal;
-  $integer-box-margin: 0 0 10px 0;
   $integer-box-padding: 0 6px;
   $integer-box-border: 1px solid $charcoal--light;
   $integer-box-txt-align: center;
@@ -27,7 +26,7 @@
       $integer-box-display,
       $integer-box-radius,
       $integer-box-bg-color,
-      $integer-box-margin,
+      null,
       $integer-box-padding,
       $integer-box-border,
       $integer-box-txt-align

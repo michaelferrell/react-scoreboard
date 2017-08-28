@@ -13,7 +13,7 @@
 
 @mixin label-box() {
   $label-box-bg-color: rgba(0, 0, 0, 0.4);
-  $label-box-margin: 0 0 10px 0;
+  $label-box-margin: 10px 0;
   $label-box-padding: 4px 0;
   $label-box-border: 0;
   $label-box-text-align: center;

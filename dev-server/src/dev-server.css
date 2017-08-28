@@ -1,5 +1,23 @@
 body {
 	background-color: #111;
 }
-/*scoreboard css overrides*/
 .demo-app {}
+
+.demo-app .scoreboard-control-panel {
+	text-align: center;
+}
+.demo-app .demo-container {
+	margin-top: 40px;
+	padding: 20px;
+}
+.demo-app .btn-demo {
+	border-radius: 3px;
+	background-color: #272727;
+	margin: 20px 10px 0 10px;
+	padding: 5px 10px;
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	font-size: 1.1rem;
+	line-height: 1.1rem;
+	font-weight: 300;
+	color: #999;
+}
