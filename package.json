@@ -1,7 +1,7 @@
 {
   "name": "react-scoreboard",
   "description": "Scoreboard component for React JS",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "main": "dist/main.js",
   "files": [
     "dist/"
