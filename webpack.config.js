@@ -67,7 +67,7 @@ const config = {
   output: {
     path: output_path,
     filename: 'main.js',
-    library: 'reactDockerTemplate',
+    library: 'reactScoreboard',
     libraryTarget: 'umd'
   },
   plugins: [
